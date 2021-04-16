@@ -1,0 +1,25 @@
+# Setup
+title:               "Blog"
+tagline:             'Me think, why waste time say lot word, when few word do trick'
+description:         "Hey! I'm Vasiliy Ermolovich or @nashby. Here you'll find some blog posts I write once per 10 years"
+url:                 https://nashby.io
+baseurl:             ''
+paginate:            5
+permalink:           pretty
+
+# About/contact
+author:
+  name:              Vasiliy Ermolovich
+  url:               https://twitter.com/nashby_
+  email:             younash@gmail.com
+
+github:              https://github.com/nashby
+twitter:             https://twitter.com/nashby_
+
+# Gems
+plugins:
+  - jekyll-paginate
+
+# Custom vars
+version:             1.1.0
+google_analytics_id: #UA-XXXX-Y
