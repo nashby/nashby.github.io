@@ -2,7 +2,7 @@
 title:               "Blog"
 tagline:             'Me think, why waste time say lot word, when few word do trick'
 description:         "Hey! I'm Vasiliy Ermolovich or @nashby. Here you'll find some blog posts I write once per 10 years"
-url:                 https://nashby.io
+url:                 https://nashby.github.io
 baseurl:             ''
 paginate:            5
 permalink:           pretty
