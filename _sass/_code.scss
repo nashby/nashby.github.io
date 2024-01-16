@@ -24,7 +24,9 @@ pre {
   margin-bottom: var(--spacer);
   background-color: var(--code-bg);
   border-radius: var(--border-radius);
-
+  white-space: pre;
+  overflow-x: auto;
+  
   pre {
     margin-bottom: 0;
   }
