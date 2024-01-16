@@ -13,7 +13,7 @@ source "https://rubygems.org"
 gem "rails", "1.0.0"
 ```
 
-Since I knew that it would be required to do some changes to Rails gems I install it with `bundle install --local`. This would allow for easier modifications later on. My first attempt was running `bundle exec rails --help`:
+Since I knew that it would be required to make some changes to Rails gems I install it with `bundle install --local`. This would allow for easier modifications later on. My first attempt was running `bundle exec rails --help`:
 
 ```
 /activesupport-1.2.5/lib/active_support/inflector.rb:157: syntax error, unexpected ':', expecting `then' or ',' or ';' or '\n' (SyntaxError)
@@ -43,7 +43,7 @@ rails-1.0.0/lib/rails_generator/options.rb:124: syntax error, unexpected '[', ex
 ...make any changes.') { |options[:pretend]| }
 ```
 
-That's some weird syntax. Turns out you could assigns something to a hash right inside the block variable thing:
+That's some weird syntax. Turns out you could assign something to a hash right inside the block variable thing:
 
 ```ruby
 opt.on('-p', '--pretend', 'Run but do not make any changes.') { |options[:pretend]| }
@@ -153,7 +153,7 @@ bundle exec rails blog
 Cannot create Binding object for non-Ruby caller
 ```
 
-Success! Is it though? It has genereated an app but all the files are empty. And if you have a sharp eye you'll have noticed this error:
+Success! Is it though? It has generated an app but all the files are empty. And if you have a sharp eye you'll have noticed this error:
 
 ```
 Cannot create Binding object for non-Ruby caller
@@ -172,7 +172,7 @@ file(relative_source, relative_destination, template_options) do |file|
 end
 ```
 
-Believe me, I really tried to figure you what this error is about given that it's obviously a Ruby caller but luck wasn't there for me. Then I tried to replace `binding` with `Kernel.bidning`
+Believe me, I really tried to figure you what this error was about given that it's obviously a Ruby caller but luck wasn't there for me. Then I tried to replace `binding` with `Kernel.binding`
 and it worked... If you know what's going on here please let me know! Maybe Rails were redefining `binding` somewhere?
 
 Alright, let's proceed:
@@ -222,7 +222,7 @@ def class_name(table_name = table_name)
 end
 ```
 
-I'm a bit suprised that this was working in Ruby 1.8. The error is pretty self-explanatory so I just renamed default argument value and continued with my life:
+I'm a bit surprised that this was working in Ruby 1.8. The error is pretty self-explanatory so I just renamed default argument value and continued with my life:
 
 ```
 bundle exec ruby script/server -p 3001
