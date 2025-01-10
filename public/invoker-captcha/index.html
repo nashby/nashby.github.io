@@ -272,12 +272,23 @@
             document.getElementById('verify').click();
           }
         });
+
+        document.addEventListener('click', function (event) {
+          const container = document.getElementById('container');
+
+          if (!container.contains(event.target)) {
+            sounds.meep_merp.pause();
+            sounds.meep_merp.currentTime = 0;
+
+            sounds.meep_merp.play();
+          }
+        });
       });
 
     </script>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="container">
       <div class="header">
         Select orbs to cast<br>
         <strong id="skill">...</strong><br>
