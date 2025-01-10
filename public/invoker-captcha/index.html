@@ -260,14 +260,22 @@
           }
         });
 
-        // TODO: Don't click on selected
         document.addEventListener('keydown', function(event) {
           if (event.key === 'q') {
-            document.getElementById('orbs').querySelector('img[data-orb="quas"]').click();
+            const q = document.getElementById('orbs').querySelector('img:not(.selected)[data-orb="quas"]');
+            if (!q) return;
+
+            q.click();
           } else if (event.key === 'w') {
-            document.getElementById('orbs').querySelector('img[data-orb="wex"]').click();
+            const w = document.getElementById('orbs').querySelector('img:not(.selected)[data-orb="wex"]');
+            if (!w) return;
+
+            w.click();
           } else if (event.key === 'e') {
-            document.getElementById('orbs').querySelector('img[data-orb="exort"]').click();
+            const e = document.getElementById('orbs').querySelector('img:not(.selected)[data-orb="exort"]');
+            if (!e) return;
+
+            e.click()
           } else if (event.key === "Enter") {
             document.getElementById('verify').click();
           }
