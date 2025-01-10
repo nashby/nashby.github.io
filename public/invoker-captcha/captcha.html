@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="favicon.ico">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      body.passed {
+        background: #494949;
+      }
+
+      body.passed video {
+        display: block;
+      }
+
+      body.passed .container {
+        display: none;
+      }
+
+      video {
+        display: none;
+      }
+
+      .container {
+        width: 300px;
+        padding: 10px;
+        font-family: Arial, sans-serif;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        background: white;
+      }
+
+      .header {
+        background: #4285f4;
+        color: white;
+        padding: 15px;
+        margin-bottom: 5px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        background: white;
+      }
+
+      .grid img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border-color 0.2s;
+        filter: brightness(40%);
+      }
+
+      .grid img.selected {
+        filter: brightness(100%);
+        border-color: #4285f4;
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .verify-btn {
+        background: #4285f4;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-left: auto;
+        cursor: pointer;
+      }
+
+      .reset-btn {
+        width: 43px;
+        height: 31px;
+        cursor: pointer;
+      }
+    </style>
+
+    <script>
+      const isEqual = (a, b) => JSON.stringify(a.sort()) === JSON.stringify(b.sort());
+
+      const skills = {
+        cold_snap: {
+          name: 'COLD SNAP',
+          slug: 'cold_snap',
+          orbs: ['quas', 'quas', 'quas']
+        },
+        ghost_walk: {
+          name: 'GHOST WALK',
+          slug: 'ghost_walk',
+          orbs: ['quas', 'quas', 'wex']
+        },
+        ice_wall: {
+          name: 'ICE WALL',
+          slug: 'ice_wall',
+          orbs: ['quas', 'quas', 'exort']
+        },
+        emp: {
+          name: 'E.M.P',
+          slug: 'emp',
+          orbs: ['wex', 'wex', 'wex']
+        },
+        tornado: {
+          name: 'TORNADO',
+          slug: 'tornado',
+          orbs: ['wex', 'wex', 'quas']
+        },
+        alacrity: {
+          name: 'ALACRITY',
+          slug: 'alacrity',
+          orbs: ['wex', 'wex', 'exort']
+        },
+        sun_strike: {
+          name: 'SUN STRIKE',
+          slug: 'sun_strike',
+          orbs: ['exort', 'exort', 'exort']
+        },
+        forge_spirit: {
+          name: 'FORGE SPIRIT',
+          slug: 'forge_spirit',
+          orbs: ['exort', 'exort', 'quas']
+        },
+        chaos_meteor: {
+          name: 'CHAOS METEOR',
+          slug: 'chaos_meteor',
+          orbs: ['exort', 'exort', 'wex']
+        },
+        deafening_blast: {
+          name: 'DEAFENING BLAST',
+          slug: 'deafening_blast',
+          orbs: ['quas', 'wex', 'exort']
+        }
+      }
+
+      const sounds = {
+        cold_snap: function() { let audio = new Audio('cold_snap.mp3'); audio.volume = 0.05; return audio }(),
+        say_cold_snap: function() { let audio = new Audio('say_cold_snap.mp3'); audio.volume = 0.2; return audio }(),
+        ghost_walk: function() { let audio = new Audio('ghost_walk.mp3'); audio.volume = 0.05; return audio }(),
+        say_ghost_walk: function() { let audio = new Audio('say_ghost_walk.mp3'); audio.volume = 0.2; return audio }(),
+        ice_wall: function() { let audio = new Audio('ice_wall.mp3'); audio.volume = 0.05; return audio }(),
+        say_ice_wall: function() { let audio = new Audio('say_ice_wall.mp3'); audio.volume = 0.2; return audio }(),
+        emp: function() { let audio = new Audio('emp.mp3'); audio.volume = 0.05; return audio }(),
+        say_emp: function() { let audio = new Audio('say_emp.mp3'); audio.volume = 0.2; return audio }(),
+        tornado: function() { let audio = new Audio('tornado.mp3'); audio.volume = 0.05; return audio }(),
+        say_tornado: function() { let audio = new Audio('say_tornado.mp3'); audio.volume = 0.2; return audio }(),
+        alacrity: function() { let audio = new Audio('alacrity.mp3'); audio.volume = 0.05; return audio }(),
+        say_alacrity: function() { let audio = new Audio('say_alacrity.mp3'); audio.volume = 0.2; return audio }(),
+        sun_strike: function() { let audio = new Audio('sun_strike.mp3'); audio.volume = 0.05; return audio }(),
+        say_sun_strike: function() { let audio = new Audio('say_sun_strike.mp3'); audio.volume = 0.2; return audio }(),
+        forge_spirit: function() { let audio = new Audio('forge_spirit.mp3'); audio.volume = 0.05; return audio }(),
+        say_forge_spirit: function() { let audio = new Audio('say_forge_spirit.mp3'); audio.volume = 0.2; return audio }(),
+        chaos_meteor: function() { let audio = new Audio('chaos_meteor.mp3'); audio.volume = 0.05; return audio }(),
+        say_chaos_meteor: function() { let audio = new Audio('say_chaos_meteor.mp3'); audio.volume = 0.2; return audio }(),
+        deafening_blast: function() { let audio = new Audio('deafening_blast.mp3'); audio.volume = 0.05; return audio }(),
+        say_deafening_blast: function() { let audio = new Audio('say_deafening_blast.mp3'); audio.volume = 0.2; return audio }(),
+        orb_select: function() { let audio = new Audio('orb_select.mp3'); audio.volume = 0.1; return audio }(),
+        refresher: function() { let audio = new Audio('refresher.mp3'); audio.volume = 0.1; return audio }(),
+        invalid: function() { let audio = new Audio('not_verified.mp3'); audio.volume = 0.1; return audio }(),
+        meep_merp: function() { let audio = new Audio('meep_merp.mp3'); audio.volume = 0.1; return audio }()
+      }
+
+      function randomizeOrbs(skill) {
+        const orbNames = ['quas', 'wex', 'exort'];
+        const randomOrbs = [...skill.orbs];
+
+        for (let i = 0; i < 6; i++) {
+          const orbName = orbNames[Math.floor(Math.random() * orbNames.length)];
+          randomOrbs.push(orbName);
+        }
+
+        return randomOrbs.sort((a, b) => 0.5 - Math.random());;
+      }
+
+      function randomizeSkill() {
+        const [_, randomSkill] = Object.entries(skills)[Math.floor(Math.random() * Object.keys(skills).length)];
+
+        return randomSkill;
+      }
+
+      function createOrbs(orbsEl, orbs) {
+        orbsEl.innerHTML = '';
+
+        orbs.forEach(orbName => {
+          const orb = document.createElement('img');
+          orb.src = `${orbName}.png`;
+          orb.dataset.orb = orbName;
+
+          orb.addEventListener('click', function () {
+            orb.classList.toggle('selected');
+            sounds.orb_select.pause();
+            sounds.orb_select.currentTime = 0;
+            sounds.orb_select.play();
+          });
+
+          orbsEl.appendChild(orb);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function(event) {
+        let randomSkill = randomizeSkill();
+        let randomOrbs = randomizeOrbs(randomSkill);
+
+        const orbsEl = document.getElementById('orbs');
+        const skillEl = document.getElementById('skill');
+        const resetEl = document.getElementById('reset');
+        const verifyEl = document.getElementById('verify');
+
+        createOrbs(orbsEl, randomOrbs)
+        skillEl.innerText = randomSkill.name;
+
+        resetEl.addEventListener('click', function() {
+          sounds.refresher.pause();
+          sounds.refresher.currentTime = 0;
+
+          sounds.refresher.play();
+
+          randomSkill = randomizeSkill();
+          randomOrbs = randomizeOrbs(randomSkill);
+
+          createOrbs(orbsEl, randomOrbs);
+          skill.innerText = randomSkill.name;
+        });
+
+        verifyEl.addEventListener('click', function () {
+          const selectedOrbs = Array.from(document.querySelectorAll('#orbs img.selected')).map((img) => img.dataset.orb);
+          const isValid = isEqual(randomSkill.orbs, selectedOrbs);
+
+          if (selectedOrbs.length !== 3) {
+            sounds.meep_merp.pause();
+            sounds.meep_merp.currentTime = 0;
+
+            sounds.meep_merp.play();
+            return;
+          }
+
+          if (isValid) {
+            sounds['say_' + randomSkill.slug].play();
+            sounds[randomSkill.slug].play();
+            document.body.classList.add('passed');
+          } else {
+            sounds.invalid.pause();
+            sounds.invalid.currentTime = 0;
+            sounds.invalid.play();
+          }
+        });
+
+        // TODO: Don't click on selected
+        document.addEventListener('keydown', function(event) {
+          if (event.key === 'q') {
+            document.getElementById('orbs').querySelector('img[data-orb="quas"]').click();
+          } else if (event.key === 'w') {
+            document.getElementById('orbs').querySelector('img[data-orb="wex"]').click();
+          } else if (event.key === 'e') {
+            document.getElementById('orbs').querySelector('img[data-orb="exort"]').click();
+          } else if (event.key === "Enter") {
+            document.getElementById('verify').click();
+          }
+        });
+      });
+
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        Select orbs to cast<br>
+        <strong id="skill">...</strong><br>
+      </div>
+
+      <div class="grid" id="orbs">
+      </div>
+
+      <div class="footer">
+        <img class="reset-btn" id="reset" src="refresher.png" />
+        <button class="verify-btn" id="verify">VERIFY</button>
+      </div>
+    </div>
+
+    <video class="passed" autoplay muted loop>
+      <source src="verified.mp4" type="video/mp4">
+    </video>
+  </body>
+</html>
