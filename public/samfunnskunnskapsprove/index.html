@@ -2556,7 +2556,7 @@
           optionsContainerEl.innerHTML = "";
           selectedOptionElement = null;
 
-          currentQuestion.options.forEach((optionText) => {
+          shuffle(currentQuestion.options).forEach((optionText) => {
             const optionDiv = document.createElement("div");
             optionDiv.textContent = optionText;
             if (questionState.userAnswer !== null) {
@@ -2696,6 +2696,10 @@
         submitBtn.style.display = "none";
         nextBtn.style.display = "none";
         prevBtn.style.display = "none";
+      }
+
+      function shuffle(array) {
+        return array.sort(() => Math.random() - 0.5);
       }
     </script>
   </body>
