@@ -1,0 +1,2260 @@
+const quizData = [
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hva er ett av målene med aktiviteter i barnehagen, ifølge teksten?",
+      options: [
+        "At barna lærer å bli bedre enn andre.",
+        "At barna blir bedre forberedt til å begynne på skolen.",
+        "At barna kun leker fritt uten planlegging.",
+      ],
+      correctAnswer:
+        "At barna blir bedre forberedt til å begynne på skolen.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hvilke verdier skal barnehagen bygge på, i henhold til barnehageloven?",
+      options: [
+        "Kun verdier fra én spesifikk religion.",
+        "Grunnleggende verdier i kristen og humanistisk tradisjon, forankret i menneskerettighetene.",
+        "Verdier som fokuserer utelukkende på individuell prestasjon.",
+      ],
+      correctAnswer:
+        "Grunnleggende verdier i kristen og humanistisk tradisjon, forankret i menneskerettighetene.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hva har foreldre som ikke snakker norsk rett til på foreldremøter i barnehagen?",
+      options: [
+        "Å få møtet utsatt til de lærer norsk.",
+        "Å ha med seg tolk.",
+        "Å motta skriftlig referat på engelsk.",
+      ],
+      correctAnswer: "Å ha med seg tolk.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hvem bestemmer maksprisen for foreldrebetaling i barnehager?",
+      options: ["Den enkelte barnehage.", "Kommunen alene.", "Stortinget."],
+      correctAnswer: "Stortinget.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question: "Hvor mange år er grunnskolen i Norge?",
+      options: ["9 år.", "10 år.", "13 år."],
+      correctAnswer: "10 år.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question: "Når begynner barn vanligvis på skolen i Norge?",
+      options: [
+        "Det året de fyller fem år.",
+        "I august det året de fyller seks år.",
+        "Når foreldrene mener de er klare.",
+      ],
+      correctAnswer: "I august det året de fyller seks år.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hvordan vurderes elever på barnetrinnet (1. til 7. trinn)?",
+      options: [
+        "Med karakterer fra 1 til 6.",
+        "Kun med en avsluttende eksamen i 7. trinn.",
+        "Med muntlig eller skriftlig vurdering, men ikke karakterer.",
+      ],
+      correctAnswer:
+        "Med muntlig eller skriftlig vurdering, men ikke karakterer.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        'Hva er karakteren "lite god" et eksempel på i ungdomsskolen?',
+      options: [
+        "En fagkarakter.",
+        "En karakter i orden eller oppførsel.",
+        "En vurdering av fritidsaktiviteter.",
+      ],
+      correctAnswer: "En karakter i orden eller oppførsel.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question: "Hva skjer med elever i grunnskolen etter sommerferien?",
+      options: [
+        "De må ta en prøve for å flytte til neste trinn.",
+        "De flyttes automatisk opp til neste klassetrinn.",
+        "De kan velge å gå samme klassetrinn om igjen hvis de ønsker.",
+      ],
+      correctAnswer: "De flyttes automatisk opp til neste klassetrinn.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question: "Hva er forbudt både på skolen og hjemme i Norge?",
+      options: [
+        "Å bruke mobiltelefon i timene.",
+        "Fysisk avstraffelse.",
+        "Å snakke andre språk enn norsk.",
+      ],
+      correctAnswer: "Fysisk avstraffelse.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question: "Hvilken type skole går de fleste barn i Norge på?",
+      options: [
+        "Private grunnskoler.",
+        "Internasjonale skoler.",
+        "Offentlige skoler.",
+      ],
+      correctAnswer: "Offentlige skoler.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question: "Hvem vedtar læreplanene for grunnskolen i Norge?",
+      options: [
+        "Den enkelte skole.",
+        "Kommunestyret.",
+        "Politikerne på Stortinget.",
+      ],
+      correctAnswer: "Politikerne på Stortinget.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hva slags arbeidsform nevnes som vanlig på skolen i Norge for å lære samarbeid?",
+      options: [
+        "Individuelle prøver hver uke.",
+        "Å jobbe mye i grupper og med prosjektarbeid.",
+        "Kun forelesninger fra læreren.",
+      ],
+      correctAnswer: "Å jobbe mye i grupper og med prosjektarbeid.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        'Hva er en "utviklingssamtale" som nevnes i forbindelse med skolen?',
+      options: [
+        "En samtale der kun læreren snakker.",
+        "En samtale mellom eleven, foreldrene og læreren om faglig og sosial utvikling.",
+        "En samtale der eleven får karakterer for første gang.",
+      ],
+      correctAnswer:
+        "En samtale mellom eleven, foreldrene og læreren om faglig og sosial utvikling.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hva er et eksempel på et problem i samarbeidet mellom skole og foreldre, ifølge teksten?",
+      options: [
+        "Foreldrene er for involverte i undervisningen.",
+        "Foreldrene møter ikke opp på foreldremøter.",
+        "Foreldrene klager for ofte på lærerne.",
+      ],
+      correctAnswer: "Foreldrene møter ikke opp på foreldremøter.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question: "Hvilken rett har elever med fullført grunnskole?",
+      options: [
+        "Rett til jobb umiddelbart.",
+        "Rett til plass på videregående skole.",
+        "Rett til gratis førerkort.",
+      ],
+      correctAnswer: "Rett til plass på videregående skole.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hva er hovedforskjellen mellom studieforberedende og yrkesfaglige studieretninger i videregående skole?",
+      options: [
+        "Studieforberedende er kortere enn yrkesfaglig.",
+        "Yrkesfaglig gir praktisk utdanning og fagbrev, studieforberedende gir teoretisk utdanning for høyere studier.",
+        "Kun studieforberedende er gratis.",
+      ],
+      correctAnswer:
+        "Yrkesfaglig gir praktisk utdanning og fagbrev, studieforberedende gir teoretisk utdanning for høyere studier.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hva er en viktig grunn til at Norge trenger en høyt utdannet befolkning?",
+      options: [
+        "For å konkurrere i internasjonale idrettskonkurranser.",
+        "Et moderne velferdssamfunn er avhengig av høy sysselsetting, teknologi, produksjon og nyskaping.",
+        "For at flere skal kunne jobbe i utlandet.",
+      ],
+      correctAnswer:
+        "Et moderne velferdssamfunn er avhengig av høy sysselsetting, teknologi, produksjon og nyskaping.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hva er status for universiteter og offentlige høgskoler med tanke på kostnad for studenten?",
+      options: [
+        "De har høye studieavgifter.",
+        "De er gratis, men studentene må betale bøkene selv.",
+        "De dekkes fullstendig av Lånekassen, inkludert bøker.",
+      ],
+      correctAnswer: "De er gratis, men studentene må betale bøkene selv.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question: "Hva er hovedformålet med Lånekassen?",
+      options: [
+        "Å gi lån kun til de beste studentene.",
+        "Å gi alle muligheten til å ta høyere utdanning uavhengig av økonomi og bakgrunn.",
+        "Å finansiere forskningsprosjekter ved universiteter.",
+      ],
+      correctAnswer:
+        "Å gi alle muligheten til å ta høyere utdanning uavhengig av økonomi og bakgrunn.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question: "Hva er et stipend fra Lånekassen?",
+      options: [
+        "Penger som alltid må betales tilbake med renter.",
+        "Penger som ikke skal tilbakebetales, ofte betinget av fullførte studier.",
+        "En type studielån med lavere rente.",
+      ],
+      correctAnswer:
+        "Penger som ikke skal tilbakebetales, ofte betinget av fullførte studier.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question: 'Hva er "livslang læring"?',
+      options: [
+        "At man må gå på skole hele livet.",
+        "At man lærer nye ferdigheter og holder seg oppdatert gjennom hele livet.",
+        "En type utdanning kun for eldre.",
+      ],
+      correctAnswer:
+        "At man lærer nye ferdigheter og holder seg oppdatert gjennom hele livet.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hvem har rett til forberedende opplæring for voksne (FOV)?",
+      options: [
+        "Alle voksne som ønsker det, uavhengig av tidligere utdanning.",
+        "Voksne som ikke har fullført grunnskole tidligere.",
+        "Kun voksne over 50 år.",
+      ],
+      correctAnswer: "Voksne som ikke har fullført grunnskole tidligere.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question: 'Hva er en "realkompetansevurdering"?',
+      options: [
+        "En vurdering av en persons fysiske form.",
+        "En vurdering av en persons kompetanse opp mot fastsatte kriterier, spesielt når formelle papirer mangler.",
+        "En eksamen man tar for å komme inn på universitet.",
+      ],
+      correctAnswer:
+        "En vurdering av en persons kompetanse opp mot fastsatte kriterier, spesielt når formelle papirer mangler.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hvorfor er det et mål at alle som bor i Norge skal beherske norsk?",
+      options: [
+        "Fordi norsk er det eneste offisielle språket i FN.",
+        "Et felles språk er med på å skape et fellesskap og letter integreringen.",
+        "For å kunne reise gratis med offentlig transport.",
+      ],
+      correctAnswer:
+        "Et felles språk er med på å skape et fellesskap og letter integreringen.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        "Hva avhenger varigheten av norskopplæringen for de som har rett og plikt av?",
+      options: [
+        "Hvor mye de betaler for kurset.",
+        "Hvilket norsknivå som er satt som mål for den enkelte.",
+        "Hvor gamle de er.",
+      ],
+      correctAnswer:
+        "Hvilket norsknivå som er satt som mål for den enkelte.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Barnehage, Grunnskole, Samarbeid, Videregående, Høyere utdanning, Lånekassen, Livslang læring, Norskopplæring",
+      question:
+        'Hva er en "språkpraksis" i forbindelse med norskopplæring?',
+      options: [
+        "En skriftlig prøve i norsk grammatikk.",
+        "En mulighet til å lære språket i et naturlig miljø på en arbeidsplass.",
+        "En app for å lære norske ord.",
+      ],
+      correctAnswer:
+        "En mulighet til å lære språket i et naturlig miljø på en arbeidsplass.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: "Hva er en av fagforeningenes viktigste oppgaver?",
+      options: [
+        "Å arrangere sosiale aktiviteter for medlemmene.",
+        "Å forhandle med arbeidsgiverne om lønn og andre rettigheter.",
+        "Å bestemme hvem som skal ansettes i bedrifter.",
+      ],
+      correctAnswer:
+        "Å forhandle med arbeidsgiverne om lønn og andre rettigheter.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question:
+        "Hva kan arbeidstakere ha rett til hvis de ikke blir enige med arbeidsgiveren under forhandlinger?",
+      options: [
+        "Å få høyere lønn automatisk.",
+        "Å gå ut i streik.",
+        "Å bytte jobb uten varsel.",
+      ],
+      correctAnswer: "Å gå ut i streik.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: "Hva er HMS en forkortelse for?",
+      options: [
+        "Høy Månedlig Sikkerhet.",
+        "Helse, Miljø og Sikkerhet.",
+        "Hjelp Med Søknader.",
+      ],
+      correctAnswer: "Helse, Miljø og Sikkerhet.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: "Hvem vedtar lover som styrer arbeidslivet i Norge?",
+      options: [
+        "Fagforeningene.",
+        "Arbeidsgiverorganisasjonene.",
+        "Politikerne på Stortinget.",
+      ],
+      correctAnswer: "Politikerne på Stortinget.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: "Hva handler arbeidsmiljøloven blant annet om?",
+      options: [
+        "Kun om lønnsnivåer i ulike bransjer.",
+        "Ansettelser, kontrakter, arbeidstid og HMS.",
+        "Regler for feriepenger.",
+      ],
+      correctAnswer: "Ansettelser, kontrakter, arbeidstid og HMS.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question:
+        "Hvor mye ferie har arbeidstakere i Norge som et minimum krav på ifølge ferieloven?",
+      options: ["Tre uker.", "Fire uker + én dag.", "Seks uker."],
+      correctAnswer: "Fire uker + én dag.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question:
+        "Hva er et sentralt prinsipp Norge som velferdssamfunn er bygd på?",
+      options: [
+        "At de rikeste bestemmer mest.",
+        "Tanken om likeverd, at alle mennesker er like viktige.",
+        "At alle må klare seg selv uten hjelp fra staten.",
+      ],
+      correctAnswer:
+        "Tanken om likeverd, at alle mennesker er like viktige.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: "Hva er en velferdsstat avhengig av?",
+      options: [
+        "At så få som mulig jobber, slik at det er flere ytelser å dele ut.",
+        "At så mange som mulig jobber og betaler skatt.",
+        "At staten eier alle bedrifter.",
+      ],
+      correctAnswer: "At så mange som mulig jobber og betaler skatt.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question:
+        "Hvilken institusjon har ansvaret for trygdeordninger som dagpenger, sykepenger og pensjon i Norge?",
+      options: ["Skatteetaten.", "Nav.", "Kommunestyret."],
+      correctAnswer: "Nav.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question:
+        "Hva er gjennomsnittlig brutto årslønn i Norge ifølge teksten (2023)?",
+      options: [
+        "Omtrent tre hundre tusen kroner.",
+        "I underkant av seks hundre og sytti tusen kroner.",
+        "Over en million kroner.",
+      ],
+      correctAnswer: "I underkant av seks hundre og sytti tusen kroner.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: "Hvem betaler mest skatt i Norge?",
+      options: [
+        "Alle betaler like mye skatt.",
+        "De som tjener lite.",
+        "De som tjener mye.",
+      ],
+      correctAnswer: "De som tjener mye.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question:
+        "Hva må arbeidsgiveren gjøre før lønnen utbetales til arbeidstakeren?",
+      options: [
+        "Be om tillatelse fra fagforeningen.",
+        "Trekke skatt fra bruttolønnen.",
+        "Betale en bonus til arbeidstakeren.",
+      ],
+      correctAnswer: "Trekke skatt fra bruttolønnen.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: "Hva har alle som blir ansatt et sted rett til?",
+      options: [
+        "En firmabil.",
+        "En skriftlig arbeidsavtale.",
+        "Seks ukers betalt ferie det første året.",
+      ],
+      correctAnswer: "En skriftlig arbeidsavtale.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: 'Hva menes med "å arbeide svart"?',
+      options: [
+        "Å jobbe nattevakter.",
+        "Å jobbe uten kontrakt og uten å betale skatt.",
+        "Å jobbe i en bedrift som produserer svarte produkter.",
+      ],
+      correctAnswer: "Å jobbe uten kontrakt og uten å betale skatt.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: "Hva er en konsekvens for arbeidstakeren ved svart arbeid?",
+      options: [
+        "Man får høyere pensjonspoeng.",
+        "Man får ikke feriepenger.",
+        "Man får automatisk fast ansettelse.",
+      ],
+      correctAnswer: "Man får ikke feriepenger.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question:
+        "Hvilke næringer var de viktigste i Norge for 150 år siden?",
+      options: [
+        "Olje- og gassproduksjon.",
+        "Jordbruk, skogbruk og fiske.",
+        "IT og serviceyrker.",
+      ],
+      correctAnswer: "Jordbruk, skogbruk og fiske.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: "Hvilken sektor finner vi flest jobber i Norge i dag?",
+      options: ["Industrien.", "Jordbruk.", "Serviceyrkene."],
+      correctAnswer: "Serviceyrkene.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: "Hva er en CV?",
+      options: [
+        "Et brev der du forteller om dine hobbyer.",
+        "Et dokument der du kort forteller om arbeidserfaring og utdanning.",
+        "En attest fra din forrige arbeidsgiver.",
+      ],
+      correctAnswer:
+        "Et dokument der du kort forteller om arbeidserfaring og utdanning.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question:
+        "Hva er vanlig at en arbeidsgiver gjør før de bestemmer hvem som skal få en jobb?",
+      options: [
+        "Gir jobben til den første som søker.",
+        "Innkaller aktuelle kandidater til ett eller flere intervjuer.",
+        "Trekker lodd blant søkerne.",
+      ],
+      correctAnswer:
+        "Innkaller aktuelle kandidater til ett eller flere intervjuer.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: "Hva er et tips for jobbintervjuet nevnt i teksten?",
+      options: [
+        "Komme litt for sent for å vise at du er travel.",
+        "Unngå øyekontakt for å vise respekt.",
+        "Være positiv, smile og prøve å få god kontakt.",
+      ],
+      correctAnswer: "Være positiv, smile og prøve å få god kontakt.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Arbeidsliv, Fagforeninger, Lover og Regler, Velferdsstaten, Lønn og Skatt, Arbeidsavtale, Svart Arbeid, Næringsstruktur, Jobbsøking, Nettverk",
+      question: 'Hva er "nettverk" i forbindelse med jobbsøking?',
+      options: [
+        "Kun din nærmeste familie.",
+        "Alle mennesker vi kjenner, møter og har kontakt med.",
+        "En database over ledige stillinger.",
+      ],
+      correctAnswer: "Alle mennesker vi kjenner, møter og har kontakt med.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Kildekritikk, Etisk bevissthet, Digital dømmekraft, Personvern, Ytringsfrihet på nett",
+      question:
+        "Hva vektlegger det norske samfunnet i dag når det gjelder elevers læring på skolen?",
+      options: [
+        "Kun å gjenfortelle det læreren sier.",
+        "Å være nysgjerrige, argumentere, drøfte og være kreative.",
+        "Å memorere fakta uten diskusjon.",
+      ],
+      correctAnswer:
+        "Å være nysgjerrige, argumentere, drøfte og være kreative.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Kildekritikk, Etisk bevissthet, Digital dømmekraft, Personvern, Ytringsfrihet på nett",
+      question: "Hva innebærer kildekritikk?",
+      options: [
+        "Å godta all informasjon man finner på internett.",
+        "Å vurdere det man leser, stille kritiske spørsmål til kilden og innholdet.",
+        "Å kun lese informasjon fra offisielle myndighetssider.",
+      ],
+      correctAnswer:
+        "Å vurdere det man leser, stille kritiske spørsmål til kilden og innholdet.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Kildekritikk, Etisk bevissthet, Digital dømmekraft, Personvern, Ytringsfrihet på nett",
+      question:
+        "Hva må man alltid oppgi dersom man bruker andres tekster, bilder eller musikk?",
+      options: [
+        "Hvor mye man betalte for materialet.",
+        "Hvem som har opphavsretten til materialet.",
+        "Sin egen mening om materialet.",
+      ],
+      correctAnswer: "Hvem som har opphavsretten til materialet.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Kildekritikk, Etisk bevissthet, Digital dømmekraft, Personvern, Ytringsfrihet på nett",
+      question: "Hva handler etisk bevissthet om?",
+      options: [
+        "Å alltid følge flertallets mening.",
+        "Å balansere forskjellige hensyn for å ta gode avgjørelser.",
+        "Å kun tenke på egne fordeler.",
+      ],
+      correctAnswer:
+        "Å balansere forskjellige hensyn for å ta gode avgjørelser.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Kildekritikk, Etisk bevissthet, Digital dømmekraft, Personvern, Ytringsfrihet på nett",
+      question: "Hvilke eksempler på sosiale medier nevnes i teksten?",
+      options: [
+        "Kun nettbanker og offentlige etaters nettsider.",
+        "Facebook, Twitter og Instagram.",
+        "E-post og SMS.",
+      ],
+      correctAnswer: "Facebook, Twitter og Instagram.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Kildekritikk, Etisk bevissthet, Digital dømmekraft, Personvern, Ytringsfrihet på nett",
+      question:
+        "Hva er viktig å være bevisst på når man deler informasjon på internett?",
+      options: [
+        "At all informasjon slettes automatisk etter 24 timer.",
+        "Hva man deler, hvem som får opplysninger, og hva de brukes til.",
+        "At man alltid må dele så mye som mulig for å være sosial.",
+      ],
+      correctAnswer:
+        "Hva man deler, hvem som får opplysninger, og hva de brukes til.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Kildekritikk, Etisk bevissthet, Digital dømmekraft, Personvern, Ytringsfrihet på nett",
+      question: "Hva handler personvern om?",
+      options: [
+        "Retten til å dele andres personopplysninger fritt.",
+        "Retten til et privatliv og til å bestemme over egne personopplysninger.",
+        "Retten til å være anonym på internett uansett hva man skriver.",
+      ],
+      correctAnswer:
+        "Retten til et privatliv og til å bestemme over egne personopplysninger.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Kildekritikk, Etisk bevissthet, Digital dømmekraft, Personvern, Ytringsfrihet på nett",
+      question: "Hva er et eksempel på en personopplysning?",
+      options: [
+        "Favorittfargen din.",
+        "Ditt navn eller personnummer.",
+        "Hvilken bil du kjører.",
+      ],
+      correctAnswer: "Ditt navn eller personnummer.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Kildekritikk, Etisk bevissthet, Digital dømmekraft, Personvern, Ytringsfrihet på nett",
+      question:
+        "Hva begrenser ytringsfriheten på sosiale medier og internett?",
+      options: [
+        "Ingenting, man kan skrive hva som helst.",
+        "Personvernet og lovparagrafer mot f.eks. rasistiske eller diskriminerende utsagn.",
+        "Kun tekniske begrensninger på plattformen.",
+      ],
+      correctAnswer:
+        "Personvernet og lovparagrafer mot f.eks. rasistiske eller diskriminerende utsagn.",
+    },
+    {
+      topic:
+        "Utdanning, kompetanse og arbeidsliv - Kildekritikk, Etisk bevissthet, Digital dømmekraft, Personvern, Ytringsfrihet på nett",
+      question: "Hva kjennetegner god digital dømmekraft, ifølge teksten?",
+      options: [
+        "Å skrive kommentarer på internett som man aldri ville sagt ansikt til ansikt.",
+        "Å kun formulere kommentarer på internett som man like gjerne kunne sagt til noen ansikt til ansikt.",
+        "Å alltid være anonym når man kommenterer.",
+      ],
+      correctAnswer:
+        "Å kun formulere kommentarer på internett som man like gjerne kunne sagt til noen ansikt til ansikt.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question:
+        "Hvor mange barn føder hver kvinne i gjennomsnitt i Norge (2023)?",
+      options: ["1,0 barn.", "1,4 barn.", "2,1 barn."],
+      correctAnswer: "1,4 barn.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question:
+        "Hva er strengt forbudt i Norge når det gjelder omskjæring?",
+      options: [
+        "Å omskjære gutter.",
+        "Å omskjære jenter.",
+        "All form for rituell omskjæring.",
+      ],
+      correctAnswer: "Å omskjære jenter.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question:
+        "Hva får foreldre som har barn mellom ett og to år hvis barnet ikke går i barnehage?",
+      options: ["Ekstra barnetrygd.", "Kontantstøtte.", "Gratis bleier."],
+      correctAnswer: "Kontantstøtte.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question: "Hva er SFO (skolefritidsordning)?",
+      options: [
+        "En obligatorisk del av skoledagen.",
+        "Et frivillig tilbud før og etter skoletid, som foreldrene vanligvis betaler for.",
+        "En type spesialundervisning for elever som trenger ekstra hjelp.",
+      ],
+      correctAnswer:
+        "Et frivillig tilbud før og etter skoletid, som foreldrene vanligvis betaler for.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question: "Hva er myndighetsalderen i Norge?",
+      options: ["16 år.", "18 år.", "20 år."],
+      correctAnswer: "18 år.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question:
+        "Hva er vanlig for de fleste som studerer i Norge når det gjelder finansiering?",
+      options: [
+        "De får fullt stipend fra staten som dekker alle utgifter.",
+        "De lever av studielån og jobber ved siden av.",
+        "Foreldrene betaler for all høyere utdanning.",
+      ],
+      correctAnswer: "De lever av studielån og jobber ved siden av.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question:
+        "Hva bestemmer hvor stor pensjonen blir for de som har vært i lønnet arbeid?",
+      options: [
+        "Hvor mange barn de har.",
+        "Lønnen man fikk mens man jobbet.",
+        "Hvilken kommune man bor i.",
+      ],
+      correctAnswer: "Lønnen man fikk mens man jobbet.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question:
+        "Hva skjer vanligvis med arven hvis den som dør har ektefelle og barn?",
+      options: [
+        "Staten arver alt.",
+        "Kun ektefellen arver.",
+        "Ektefelle og barn arver det vedkommende eide, med lik arverett for kvinner og menn.",
+      ],
+      correctAnswer:
+        "Ektefelle og barn arver det vedkommende eide, med lik arverett for kvinner og menn.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question:
+        "Hva må innbyggere fra EU/EØS-land gjøre hvis de vil jobbe i Norge?",
+      options: [
+        "De må søke om asyl.",
+        "De må registrere seg hos politiet.",
+        "De trenger ingen spesiell tillatelse eller registrering.",
+      ],
+      correctAnswer: "De må registrere seg hos politiet.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question: "Hvem kan søke om familiegjenforening i Norge?",
+      options: [
+        "Kun personer som er norske statsborgere.",
+        "Familiemedlemmer til personer med oppholdstillatelse i Norge.",
+        "Alle som har en slektning i Norge.",
+      ],
+      correctAnswer:
+        "Familiemedlemmer til personer med oppholdstillatelse i Norge.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question: "Hva er ett av hovedmålene med introduksjonsprogrammet?",
+      options: [
+        "Å gi deltakerne grunnleggende ferdigheter i engelsk.",
+        "Å forberede deltakerne til arbeid eller utdanning.",
+        "Å gi deltakerne gratis bolig.",
+      ],
+      correctAnswer: "Å forberede deltakerne til arbeid eller utdanning.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question:
+        "Hvem tilbyr norske kommuner introduksjonsprogram til, ifølge integreringsloven?",
+      options: [
+        "Alle innvandrere.",
+        "Kun arbeidsinnvandrere.",
+        "Flyktninger.",
+      ],
+      correctAnswer: "Flyktninger.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Livsløp i Norge, Innvandrerstatus, Introduksjonsprogram",
+      question: "Hva skal introduksjonsprogrammet blant annet inneholde?",
+      options: [
+        "Kun norskopplæring.",
+        "Norskopplæring, hjelp til livsmestring, og arbeids- eller utdanningsrettet innhold.",
+        "Kun opplæring om norsk kultur.",
+      ],
+      correctAnswer:
+        "Norskopplæring, hjelp til livsmestring, og arbeids- eller utdanningsrettet innhold.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question:
+        "Hvor mange personer bor det i gjennomsnitt i en husholdning i Norge i dag?",
+      options: [
+        "Litt mer enn én person.",
+        "Litt mer enn to personer.",
+        "Litt mer enn tre personer.",
+      ],
+      correctAnswer: "Litt mer enn to personer.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question:
+        "Hva er en viktig juridisk konsekvens av å være gift i Norge?",
+      options: [
+        "Man har ikke lenger ansvar for egen økonomi.",
+        "Man har plikt til å forsørge hverandre.",
+        "Kun den ene ektefellen er ansvarlig for felles lån.",
+      ],
+      correctAnswer: "Man har plikt til å forsørge hverandre.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question: "Hva er hovedregelen for å få skilsmisse i Norge?",
+      options: [
+        "Man må være separert i ett år.",
+        "Man må ha vært gift i minst fem år.",
+        "Begge parter må være enige om skilsmissen.",
+      ],
+      correctAnswer: "Man må være separert i ett år.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question:
+        "Hvilken rett har barn etter en skilsmisse, ifølge teksten?",
+      options: [
+        "Rett til å velge hvilken forelder de vil bo hos, uansett alder.",
+        "Rett til å nekte kontakt med den ene forelderen.",
+        "Rett til omsorg fra både mor og far.",
+      ],
+      correctAnswer: "Rett til omsorg fra både mor og far.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question:
+        "Hva sier barneloven om foreldrenes ansvar for barn under 18 år?",
+      options: [
+        "Foreldrene har kun ansvar for mat og klær.",
+        "Foreldrene må sørge for mat, klær og andre nødvendige ting for et godt liv.",
+        "Foreldrenes ansvar opphører når barnet begynner på skolen.",
+      ],
+      correctAnswer:
+        "Foreldrene må sørge for mat, klær og andre nødvendige ting for et godt liv.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question: "Hva forbyr barneloven i oppdragelsen av barn?",
+      options: [
+        "Å gi barna lommepenger.",
+        "Bruk av vold.",
+        "At barna hjelper til hjemme.",
+      ],
+      correctAnswer: "Bruk av vold.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question:
+        "Når har et barn rett til å si sin mening før foreldrene tar avgjørelser om personlige forhold som gjelder barnet?",
+      options: [
+        "Fra barnet er fem år.",
+        "Fra barnet er sju år.",
+        "Fra barnet er tolv år.",
+      ],
+      correctAnswer: "Fra barnet er sju år.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question:
+        "Når kan et barn selv avgjøre spørsmål om utdanning og medlemskap i organisasjoner?",
+      options: [
+        "Når det har fylt 12 år.",
+        "Når det har fylt 15 år.",
+        "Når det har fylt 18 år.",
+      ],
+      correctAnswer: "Når det har fylt 15 år.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question: "Hva er et mål med barneoppdragelsen, ifølge teksten?",
+      options: [
+        "At barna skal bli lydige og ikke stille spørsmål.",
+        "At barna skal lære å være deltakere i samfunnet og få gode grunnleggende verdier.",
+        "At barna skal fokusere kun på skolearbeid.",
+      ],
+      correctAnswer:
+        "At barna skal lære å være deltakere i samfunnet og få gode grunnleggende verdier.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question:
+        "Hvordan har synet på barneoppdragelse endret seg, ifølge teksten?",
+      options: [
+        "Barn blir stilt strengere krav til i dag enn før.",
+        "Barndommen er i dag en tid for lek og læring, ikke primært arbeid.",
+        "Foreldre er mindre involvert i barnas liv enn tidligere.",
+      ],
+      correctAnswer:
+        "Barndommen er i dag en tid for lek og læring, ikke primært arbeid.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question: 'Hva kjennetegner en "jeg-kultur", ifølge teksten?',
+      options: [
+        "Gruppas behov er viktigst.",
+        "Selvstendighet, likeverd og likestilling er positive verdier.",
+        "Lydighet og respekt for autoriteter er de fremste verdiene.",
+      ],
+      correctAnswer:
+        "Selvstendighet, likeverd og likestilling er positive verdier.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question:
+        "Hva kan være en utfordring for barn som vokser opp med to kulturer?",
+      options: [
+        "De lærer ingen regler.",
+        "De kan måtte forholde seg til ett sett regler hjemme og et annet ute.",
+        "De blir alltid favorisert på skolen.",
+      ],
+      correctAnswer:
+        "De kan måtte forholde seg til ett sett regler hjemme og et annet ute.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question: "Hva er barnevernets hovedoppgave?",
+      options: [
+        "Å straffe foreldre som gjør feil.",
+        "Å sørge for at barn og unge får en trygg oppvekst og beskytte dem.",
+        "Å finne fosterhjem til alle barn som har skilte foreldre.",
+      ],
+      correctAnswer:
+        "Å sørge for at barn og unge får en trygg oppvekst og beskytte dem.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question:
+        "Hvem har plikt til å melde fra til barnevernet hvis de har mistanke om vold i familien?",
+      options: [
+        "Kun politiet.",
+        "Kun barnet selv.",
+        "Alle som jobber med barn.",
+      ],
+      correctAnswer: "Alle som jobber med barn.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Familieformer, Barneloven, Barneoppdragelse, Jeg/Vi-kulturer, Barnevernet",
+      question: "Hva er alarmtelefonen for barn og unge?",
+      options: ["112.", "113.", "116 111."],
+      correctAnswer: "116 111.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Dugnad, Sosiale arenaer, Frivillighet, Uskrevne regler, Politisk deltakelse",
+      question: 'Hva er "dugnad"?',
+      options: [
+        "Betalt arbeid for kommunen.",
+        "Frivillig, ubetalt arbeid gjort i fellesskap.",
+        "En type skatt alle må betale.",
+      ],
+      correctAnswer: "Frivillig, ubetalt arbeid gjort i fellesskap.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Dugnad, Sosiale arenaer, Frivillighet, Uskrevne regler, Politisk deltakelse",
+      question: 'Hva ble ordet "dugnad" kåret til i 2004?',
+      options: [
+        "Norges nasjonalrett.",
+        "Norges nasjonalord.",
+        "Norges nasjonaldyr.",
+      ],
+      correctAnswer: "Norges nasjonalord.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Dugnad, Sosiale arenaer, Frivillighet, Uskrevne regler, Politisk deltakelse",
+      question: "Hva er eksempler på sosiale arenaer nevnt i teksten?",
+      options: [
+        "Kun arbeidsplassen.",
+        "Familien, skoler, arbeidsplasser, fritidsaktiviteter og kurs.",
+        "Kun steder man betaler for å være.",
+      ],
+      correctAnswer:
+        "Familien, skoler, arbeidsplasser, fritidsaktiviteter og kurs.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Dugnad, Sosiale arenaer, Frivillighet, Uskrevne regler, Politisk deltakelse",
+      question: "Hva kjennetegner frivillig arbeid?",
+      options: [
+        "Det er alltid fulltidsarbeid.",
+        "Man mottar ikke lønn, og det er ofte knyttet til organisasjoner med et samfunnsnyttig formål.",
+        "Det er kun for pensjonister.",
+      ],
+      correctAnswer:
+        "Man mottar ikke lønn, og det er ofte knyttet til organisasjoner med et samfunnsnyttig formål.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Dugnad, Sosiale arenaer, Frivillighet, Uskrevne regler, Politisk deltakelse",
+      question:
+        "Hva kan deltakelse i frivillige organisasjoner gi erfaring med?",
+      options: [
+        "Kun hvordan man tjener penger.",
+        "Demokratiske spilleregler som møtedeltakelse og valg.",
+        "Hvordan man unngår å betale skatt.",
+      ],
+      correctAnswer:
+        "Demokratiske spilleregler som møtedeltakelse og valg.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Dugnad, Sosiale arenaer, Frivillighet, Uskrevne regler, Politisk deltakelse",
+      question:
+        "Hva er et eksempel på en uskreven regel i Norge nevnt i teksten?",
+      options: [
+        "Man må alltid ha med gave når man besøker noen.",
+        "Det er vanlig å håndhilse, både for kvinner og menn.",
+        "Man skal aldri snakke med fremmede.",
+      ],
+      correctAnswer: "Det er vanlig å håndhilse, både for kvinner og menn.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Dugnad, Sosiale arenaer, Frivillighet, Uskrevne regler, Politisk deltakelse",
+      question:
+        'Hva er vanlig svar på åpningshilsenen "Hei, hvordan går det?" i Norge?',
+      options: [
+        '"Det har du ingenting med."',
+        '"Takk, bare bra. Og med deg?"',
+        '"Jeg vil ikke snakke om det."',
+      ],
+      correctAnswer: '"Takk, bare bra. Og med deg?"',
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Dugnad, Sosiale arenaer, Frivillighet, Uskrevne regler, Politisk deltakelse",
+      question:
+        "Hva må man vanligvis gjøre i Norge hvis man vil besøke venner?",
+      options: [
+        "Bare møte opp uanmeldt.",
+        "Sende en formell skriftlig invitasjon med posten.",
+        "Invitere til en spesiell dag og tid, da nordmenn sjelden går på besøk uanmeldt.",
+      ],
+      correctAnswer:
+        "Invitere til en spesiell dag og tid, da nordmenn sjelden går på besøk uanmeldt.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Dugnad, Sosiale arenaer, Frivillighet, Uskrevne regler, Politisk deltakelse",
+      question:
+        "Hva viser økt valgdeltakelse blant de yngste velgerne i Norge?",
+      options: [
+        "At unge nordmenn er mindre politisk aktive enn før.",
+        "At unge nordmenn er mer politisk aktive enn før.",
+        "At politikk ikke interesserer unge mennesker.",
+      ],
+      correctAnswer: "At unge nordmenn er mer politisk aktive enn før.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Dugnad, Sosiale arenaer, Frivillighet, Uskrevne regler, Politisk deltakelse",
+      question: "Hva er et eksempel på uformell politisk deltakelse?",
+      options: [
+        "Å stemme ved stortingsvalg.",
+        "Å delta i underskriftskampanjer eller demonstrasjoner.",
+        "Å være medlem av et politisk parti.",
+      ],
+      correctAnswer:
+        "Å delta i underskriftskampanjer eller demonstrasjoner.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Dugnad, Sosiale arenaer, Frivillighet, Uskrevne regler, Politisk deltakelse",
+      question: "Hva er et eksempel på formell politisk deltakelse?",
+      options: [
+        "Å diskutere politikk med venner.",
+        "Å skrive et leserinnlegg i avisen.",
+        "Å fremme saker i et politisk parti eller delta i valgkamp.",
+      ],
+      correctAnswer:
+        "Å fremme saker i et politisk parti eller delta i valgkamp.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hva er en viktig årsak til at folkehelsen i Norge har blitt vesentlig bedre de siste hundre årene?",
+      options: [
+        "Folk spiser mer importert mat.",
+        "Velferdssamfunnet har utviklet seg og gir bedre muligheter for gode og trygge liv.",
+        "Klimaet har blitt varmere.",
+      ],
+      correctAnswer:
+        "Velferdssamfunnet har utviklet seg og gir bedre muligheter for gode og trygge liv.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hvilke sykdommer er sammen med kreft den vanligste dødsårsaken i Norge?",
+      options: [
+        "Forkjølelse og influensa.",
+        "Hjerte- og karsykdommer.",
+        "Tropiske sykdommer.",
+      ],
+      correctAnswer: "Hjerte- og karsykdommer.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question: "Hva kan øke sjansen for å holde seg frisk lenger?",
+      options: [
+        "Å røyke regelmessig.",
+        "Å spise sunt og være fysisk aktiv.",
+        "Å unngå all sosial omgang.",
+      ],
+      correctAnswer: "Å spise sunt og være fysisk aktiv.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hva er et problem som flere innvandrere enn nordmenn kan oppleve, ifølge teksten?",
+      options: [
+        "Mangel på D-vitamin.",
+        "For mye fysisk aktivitet.",
+        "Overdreven bruk av solkrem.",
+      ],
+      correctAnswer: "Mangel på D-vitamin.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hvem har alle innbyggere i Norge rett til å ha som sin faste lege?",
+      options: [
+        "En tilfeldig lege på sykehuset.",
+        "En allmennpraktiserende lege.",
+        "En legespesialist etter eget valg.",
+      ],
+      correctAnswer: "En allmennpraktiserende lege.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hva må man vanligvis ha for å få time hos en legespesialist?",
+      options: [
+        "En anbefaling fra en venn.",
+        "Henvisning fra fastlegen.",
+        "Betale en ekstra høy avgift.",
+      ],
+      correctAnswer: "Henvisning fra fastlegen.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hva gjør du hvis du eller noen i familien din blir syke når legekontoret er stengt?",
+      options: [
+        "Ringer 113 umiddelbart.",
+        "Kontakter legevakten på telefon 116 117.",
+        "Venter til legekontoret åpner igjen.",
+      ],
+      correctAnswer: "Kontakter legevakten på telefon 116 117.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hva trenger du ofte fra lege for å kjøpe visse medisiner på apoteket?",
+      options: [
+        "En skriftlig anbefaling.",
+        "En resept.",
+        "Medlemskap i en pasientforening.",
+      ],
+      correctAnswer: "En resept.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question: "Hva betyr taushetsplikt for helsepersonell?",
+      options: [
+        "At de kan dele informasjon om deg med din familie hvis de ønsker det.",
+        "At de ikke kan gi informasjon om deg videre til andre uten ditt samtykke.",
+        "At de kun kan snakke med andre leger om din helse.",
+      ],
+      correctAnswer:
+        "At de ikke kan gi informasjon om deg videre til andre uten ditt samtykke.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hva skjer når du har betalt en bestemt sum i egenandeler for helsetjenester i løpet av et år?",
+      options: [
+        "Du må betale dobbelt så mye resten av året.",
+        "Du har rett til frikort og slipper å betale flere egenandeler det året.",
+        "Du får tilbakebetalt alle egenandelene du har betalt.",
+      ],
+      correctAnswer:
+        "Du har rett til frikort og slipper å betale flere egenandeler det året.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hvem betaler for tannlegebehandling for barn og unge opp til 19 år i den offentlige tannhelsetjenesten?",
+      options: [
+        "Foreldrene betaler full pris.",
+        "Det offentlige betaler mesteparten, foreldrene en liten andel.",
+        "Det offentlige betaler for behandlingen.",
+      ],
+      correctAnswer: "Det offentlige betaler for behandlingen.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question: "Hva anbefales for å opprettholde god tannhelse?",
+      options: [
+        "Å pusse tennene én gang om dagen.",
+        "Å spise mye sukkerholdig mat.",
+        "Å pusse tennene to ganger om dagen og være forsiktig med sukker.",
+      ],
+      correctAnswer:
+        "Å pusse tennene to ganger om dagen og være forsiktig med sukker.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hva er et eksempel på et prevensjonsmiddel som også beskytter mot seksuelt overførbare sykdommer?",
+      options: ["P-piller.", "Spiral.", "Kondom."],
+      correctAnswer: "Kondom.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hva er formålet med gratis svangerskapskontroller i Norge?",
+      options: [
+        "Å registrere alle gravide kvinner.",
+        "Å sikre helsen til mor og barn under og etter graviditeten.",
+        "Å bestemme kjønnet på barnet tidlig.",
+      ],
+      correctAnswer:
+        "Å sikre helsen til mor og barn under og etter graviditeten.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hva sier abortloven i Norge om kvinnens rett til å bestemme?",
+      options: [
+        "Kvinnen må ha tillatelse fra partneren for å ta abort.",
+        "Kvinnen kan selv ta avgjørelsen om abort innen de første 12 svangerskapsukene.",
+        "Abort er kun tillatt av medisinske årsaker.",
+      ],
+      correctAnswer:
+        "Kvinnen kan selv ta avgjørelsen om abort innen de første 12 svangerskapsukene.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question: "Hva kan være en årsak til psykiske lidelser?",
+      options: [
+        "Kun arvelige faktorer.",
+        "Vanskelige livssituasjoner, kriser, eller arvelig disposisjon.",
+        "Å ha for mange venner.",
+      ],
+      correctAnswer:
+        "Vanskelige livssituasjoner, kriser, eller arvelig disposisjon.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question: "Hvem kan henvise deg til en psykolog hvis du trenger det?",
+      options: [
+        "En venn eller et familiemedlem.",
+        "Fastlegen din.",
+        "Du må kontakte psykologen direkte uten henvisning.",
+      ],
+      correctAnswer: "Fastlegen din.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question: 'Hva menes med "seksuell identitet"?',
+      options: [
+        "Hvilket kjønn man ble tildelt ved fødselen.",
+        "Hvem man blir forelsket i og seksuelt tiltrukket av.",
+        "Hvordan man kler seg.",
+      ],
+      correctAnswer: "Hvem man blir forelsket i og seksuelt tiltrukket av.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hva beskriver den første fasen i en psykisk migrasjonsprosess?",
+      options: [
+        "Følelse av tristhet og savn.",
+        "Følelse av glede og optimisme, travelhet med det nye.",
+        "Aksept av flyttingen og en følelse av å ha funnet sin plass.",
+      ],
+      correctAnswer:
+        "Følelse av glede og optimisme, travelhet med det nye.",
+    },
+    {
+      topic:
+        "Familie, helse og hverdagsliv - Helse, Livsstil, Helsevesenet, Tannhelse, Familieplanlegging, Psykisk helse, Identitet, Migrasjonsprosess",
+      question:
+        "Hva kan skje i den andre fasen av en psykisk migrasjonsprosess?",
+      options: [
+        "Man glemmer hjemlandet helt.",
+        "Livet i det nye landet kan føles vanskelig, og man kan føle seg usikker og savne det gamle.",
+        "Man lærer språket flytende umiddelbart.",
+      ],
+      correctAnswer:
+        "Livet i det nye landet kan føles vanskelig, og man kan føle seg usikker og savne det gamle.",
+    },
+    {
+      topic: "Økonomi og Bolig",
+      question: 'Hva er "bruttolønn"?',
+      options: [
+        "Lønn etter skatt.",
+        "Lønn før skatt.",
+        "Kun den delen av lønnen som brukes til mat.",
+      ],
+      correctAnswer: "Lønn før skatt.",
+    },
+    {
+      topic: "Økonomi og Bolig",
+      question: 'Hva er "barnetrygd"?',
+      options: [
+        "En økonomisk støtte som gis for alle barn mellom ett og to år som ikke går i barnehage.",
+        "En økonomisk støtte som gis for alle barn under 18 år bosatt i Norge.",
+        "En betaling foreldre må gjøre til staten for hvert barn de har.",
+      ],
+      correctAnswer:
+        "En økonomisk støtte som gis for alle barn under 18 år bosatt i Norge.",
+    },
+    {
+      topic: "Økonomi og Bolig",
+      question:
+        "Hva trenger man vanligvis for å åpne en bankkonto i Norge?",
+      options: [
+        "Kun et pass fra hjemlandet.",
+        "Et norsk personnummer eller D-nummer.",
+        "En anbefaling fra en norsk statsborger.",
+      ],
+      correctAnswer: "Et norsk personnummer eller D-nummer.",
+    },
+    {
+      topic: "Økonomi og Bolig",
+      question: 'Hva er "renter" i forbindelse med et banklån?',
+      options: [
+        "Selve summen man låner.",
+        "En delvis nedbetaling av gjelden.",
+        "Prisen for å låne penger, beregnet i prosent av gjelden.",
+      ],
+      correctAnswer:
+        "Prisen for å låne penger, beregnet i prosent av gjelden.",
+    },
+    {
+      topic: "Økonomi og Bolig",
+      question: "Hva er formålet med å lage et budsjett for en familie?",
+      options: [
+        "Å bruke mest mulig penger raskest mulig.",
+        "Å få oversikt over inntekter og utgifter og planlegge pengebruken.",
+        "Å vise banken at man ikke trenger lån.",
+      ],
+      correctAnswer:
+        "Å få oversikt over inntekter og utgifter og planlegge pengebruken.",
+    },
+    {
+      topic: "Økonomi og Bolig",
+      question:
+        "Hva er den vanligste boligtypen i store byer som Oslo, ifølge teksten?",
+      options: ["Eneboliger.", "Rekkehus.", "Blokker og bygårder."],
+      correctAnswer: "Blokker og bygårder.",
+    },
+    {
+      topic: "Økonomi og Bolig",
+      question:
+        "Hva er en viktig forskjell mellom en selveierbolig og en bolig i et borettslag?",
+      options: [
+        "I selveierbolig betaler man ikke kommunale avgifter.",
+        "I borettslag eier man en andel og må forholde seg til borettslagets regler, mens i selveierbolig eier man boligen selv.",
+        "Kun selveierboliger kan arves.",
+      ],
+      correctAnswer:
+        "I borettslag eier man en andel og må forholde seg til borettslagets regler, mens i selveierbolig eier man boligen selv.",
+    },
+    {
+      topic: "Økonomi og Bolig",
+      question: 'Hva er "egenkapital" i forbindelse med boligkjøp?',
+      options: [
+        "Hele kjøpesummen man låner i banken.",
+        "Pengene man må ha spart selv, vanligvis 15% av kjøpesummen.",
+        "Rentene man betaler på boliglånet.",
+      ],
+      correctAnswer:
+        "Pengene man må ha spart selv, vanligvis 15% av kjøpesummen.",
+    },
+    {
+      topic: "Økonomi og Bolig",
+      question:
+        "Hva krever banken vanligvis for å gi boliglån, i tillegg til egenkapital?",
+      options: [
+        "At man er medlem av et politisk parti.",
+        "Fast inntekt eller annen økonomisk sikkerhet.",
+        "At man lover å pusse opp boligen umiddelbart.",
+      ],
+      correctAnswer: "Fast inntekt eller annen økonomisk sikkerhet.",
+    },
+    {
+      topic: "Vold, Ekteskap, Kjønnslemlestelse, Sosial kontroll",
+      question: "Hva er Norges lovers holdning til bruk av vold?",
+      options: [
+        "All bruk av vold er forbudt.",
+        "Vold i nære relasjoner er en privatsak.",
+        "Mild fysisk vold i barneoppdragelsen er tillatt.",
+      ],
+      correctAnswer: "All bruk av vold er forbudt.",
+    },
+    {
+      topic: "Vold, Ekteskap, Kjønnslemlestelse, Sosial kontroll",
+      question: "Hva sier teksten om barn som blir vitne til vold?",
+      options: [
+        "Det er mindre skadelig enn å bli utsatt for vold selv.",
+        "Det er minst like skadelig som å bli utsatt for vold selv.",
+        "Det har ingen langvarig effekt på barn.",
+      ],
+      correctAnswer:
+        "Det er minst like skadelig som å bli utsatt for vold selv.",
+    },
+    {
+      topic: "Vold, Ekteskap, Kjønnslemlestelse, Sosial kontroll",
+      question:
+        "Hva er strafferammen for å tvinge noen til å inngå ekteskap i Norge?",
+      options: [
+        "Kun bøter.",
+        "Fengsel i inntil ett år.",
+        "Fengsel i inntil seks år.",
+      ],
+      correctAnswer: "Fengsel i inntil seks år.",
+    },
+    {
+      topic: "Vold, Ekteskap, Kjønnslemlestelse, Sosial kontroll",
+      question: 'Hva kjennetegner et "arrangert ekteskap" ifølge teksten?',
+      options: [
+        "De to som gifter seg, finner hverandre selv uten familiens involvering.",
+        "Foreldrene eller familien spiller en viktig rolle i å finne ektefelle, og barna aksepterer valget.",
+        "Det innebærer alltid tvang eller press.",
+      ],
+      correctAnswer:
+        "Foreldrene eller familien spiller en viktig rolle i å finne ektefelle, og barna aksepterer valget.",
+    },
+    {
+      topic: "Vold, Ekteskap, Kjønnslemlestelse, Sosial kontroll",
+      question:
+        "Hva er konsekvensen av et tvangsekteskap etter norsk rett?",
+      options: [
+        "Det er gyldig, men kan gi grunnlag for redusert straff ved andre lovbrudd.",
+        "Det er ugyldig og kan annulleres av en norsk domstol.",
+        "Det er gyldig, men paret må delta på obligatorisk veiledning.",
+      ],
+      correctAnswer:
+        "Det er ugyldig og kan annulleres av en norsk domstol.",
+    },
+    {
+      topic: "Vold, Ekteskap, Kjønnslemlestelse, Sosial kontroll",
+      question: "Hva er kjønnslemlestelse (kvinnelig omskjæring)?",
+      options: [
+        "Et medisinsk nødvendig inngrep for jenters helse.",
+        "Inngrep som skader eller fjerner de ytre kjønnsdelene uten medisinsk nødvendighet.",
+        "En tradisjon som er lovlig i Norge hvis jenta samtykker.",
+      ],
+      correctAnswer:
+        "Inngrep som skader eller fjerner de ytre kjønnsdelene uten medisinsk nødvendighet.",
+    },
+    {
+      topic: "Vold, Ekteskap, Kjønnslemlestelse, Sosial kontroll",
+      question:
+        "Hva er straffen for å bryte loven mot kjønnslemlestelse i Norge?",
+      options: [
+        "En advarsel fra politiet.",
+        "Fengsel inntil 6 år, eller inntil 15 år ved grov kjønnslemlestelse.",
+        "En bot til familien.",
+      ],
+      correctAnswer:
+        "Fengsel inntil 6 år, eller inntil 15 år ved grov kjønnslemlestelse.",
+    },
+    {
+      topic: "Vold, Ekteskap, Kjønnslemlestelse, Sosial kontroll",
+      question: 'Hva er "negativ sosial kontroll"?',
+      options: [
+        "Når samfunnet setter rammer for akseptabel oppførsel gjennom lover.",
+        "Når rammer satt av nærmeste familie oppleves som urimelige og fratar individet personlig frihet.",
+        "Når foreldre gir barna for mye frihet.",
+      ],
+      correctAnswer:
+        "Når rammer satt av nærmeste familie oppleves som urimelige og fratar individet personlig frihet.",
+    },
+    {
+      topic: "Vold, Ekteskap, Kjønnslemlestelse, Sosial kontroll",
+      question: "Hva kan negativ sosial kontroll hindre for barn og unge?",
+      options: [
+        "At de lærer hjemlandets kultur.",
+        "At de blir integrerte i det norske storsamfunnet.",
+        "At de får for mange venner.",
+      ],
+      correctAnswer: "At de blir integrerte i det norske storsamfunnet.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hva er Norges styreform?",
+      options: ["Republikk.", "Monarki.", "Føderasjon."],
+      correctAnswer: "Monarki.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hvilke to skriftspråk har norsk?",
+      options: [
+        "Bokmål og riksmål.",
+        "Bokmål og nynorsk.",
+        "Nynorsk og samisk.",
+      ],
+      correctAnswer: "Bokmål og nynorsk.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hvor bor halvparten av Norges befolkning?",
+      options: ["På Vestlandet.", "I Nord-Norge.", "På Østlandet."],
+      correctAnswer: "På Østlandet.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hva er spesielt med Norges kystlinje?",
+      options: [
+        "Den er veldig kort og rett.",
+        "Den er ekstremt lang, med mange fjorder og øyer.",
+        "Den er helt uten øyer.",
+      ],
+      correctAnswer: "Den er ekstremt lang, med mange fjorder og øyer.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question:
+        "Hva er årsaken til at klimaet i Norge er mildere enn breddegraden skulle tilsi?",
+      options: [
+        "De høye fjellene.",
+        "Golfstrømmen.",
+        "Den store mengden skog.",
+      ],
+      correctAnswer: "Golfstrømmen.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hvordan er klimaet i Nord-Norge om vinteren?",
+      options: [
+        "Korte, milde og lyse.",
+        "Lange, kalde og mørke.",
+        "Veldig regnfulle og milde.",
+      ],
+      correctAnswer: "Lange, kalde og mørke.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Når feires Samefolkets dag?",
+      options: ["17. mai.", "6. februar.", "1. januar."],
+      correctAnswer: "6. februar.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hva er den internasjonale kvinnedagen?",
+      options: ["1. mai.", "8. mars.", "24. desember."],
+      correctAnswer: "8. mars.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question:
+        "Hvilken kristen høytid feires i mars eller april til minne om Jesu død og oppstandelse?",
+      options: ["Jul.", "Pinse.", "Påske."],
+      correctAnswer: "Påske.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hva feirer Norge på nasjonaldagen 17. mai?",
+      options: [
+        "At Norge ble selvstendig fra Sverige i 1905.",
+        "At landet fikk sin egen grunnlov 17. mai 1814.",
+        "Kongens bursdag.",
+      ],
+      correctAnswer: "At landet fikk sin egen grunnlov 17. mai 1814.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hva kalles den 24. desember i Norge?",
+      options: ["Første juledag.", "Julaften.", "Nyttårsaften."],
+      correctAnswer: "Julaften.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: 'Hva betyr det at et samfunn er "sekulært"?',
+      options: [
+        "At det er preget av én bestemt religion.",
+        "At det ikke er preget av religion.",
+        "At alle religioner er forbudt.",
+      ],
+      correctAnswer: "At det ikke er preget av religion.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hva er status for Den norske kirke i dag?",
+      options: [
+        "Den er fortsatt statskirke.",
+        "Norge har ikke lenger en statskirke eller en offisiell religion.",
+        "Kun medlemmer av Den norske kirke kan stemme ved valg.",
+      ],
+      correctAnswer:
+        "Norge har ikke lenger en statskirke eller en offisiell religion.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hva innebærer religionsfrihet i Norge?",
+      options: [
+        "At man kun kan praktisere kristendom.",
+        "At man fritt kan praktisere sin religion og velge å ikke tilhøre en religion.",
+        "At staten bestemmer hvilke religioner som er tillatt.",
+      ],
+      correctAnswer:
+        "At man fritt kan praktisere sin religion og velge å ikke tilhøre en religion.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question:
+        "Hva er en av de viktigste verdiene i det norske samfunnet, ifølge teksten?",
+      options: [
+        "At alle skal tjene like mye penger.",
+        "Likeverd mellom mennesker.",
+        "At menn har flere rettigheter enn kvinner.",
+      ],
+      correctAnswer: "Likeverd mellom mennesker.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hva kalles rasismeparagrafen i straffeloven ofte?",
+      options: ["§ 100.", "§ 185.", "§ 220."],
+      correctAnswer: "§ 185.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question:
+        "Hvor stor andel av befolkningen i Norge (2024) er født i utlandet eller har foreldre født i utlandet?",
+      options: [
+        "Omtrent fem prosent.",
+        "Omtrent ti prosent.",
+        "Omtrent tjue prosent.",
+      ],
+      correctAnswer: "Omtrent tjue prosent.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hvilke grupper kalles nasjonale minoriteter i Norge?",
+      options: [
+        "Alle innvandrere som har bodd i Norge i mer enn fem år.",
+        "Samer, jøder, kvener/norskfinner, skogfinner, romer og romanifolk/tatere.",
+        "Kun de som snakker et annet språk enn norsk hjemme.",
+      ],
+      correctAnswer:
+        "Samer, jøder, kvener/norskfinner, skogfinner, romer og romanifolk/tatere.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question: "Hva er Sametinget?",
+      options: [
+        "Et museum for samisk kultur.",
+        "Et organ som jobber for samenes rettigheter i Norge, spesielt innen kultur og utdanning.",
+        "Den norske nasjonalforsamlingen.",
+      ],
+      correctAnswer:
+        "Et organ som jobber for samenes rettigheter i Norge, spesielt innen kultur og utdanning.",
+    },
+    {
+      topic:
+        "Norge før og nå - Geografi, Klima, Tradisjoner, Religion, Likeverd, Innvandring, Samer",
+      question:
+        "Hva skjedde med samisk språk i skolen på midten av 1900-tallet?",
+      options: [
+        "Det ble forbudt for alltid.",
+        "I 1959 ble det igjen tillatt å bruke samisk som språk i skolen, etter en periode med fornorskning.",
+        "Det ble det eneste undervisningsspråket i Nord-Norge.",
+      ],
+      correctAnswer:
+        "I 1959 ble det igjen tillatt å bruke samisk som språk i skolen, etter en periode med fornorskning.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question: "Hvordan kom de første menneskene trolig til Norge?",
+      options: [
+        "Med båter fra Amerika.",
+        "Over isen fra fastlandet sør i Europa.",
+        "De utviklet seg fra aper i Norge.",
+      ],
+      correctAnswer: "Over isen fra fastlandet sør i Europa.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question: "Hva kjennetegnet bronsealderen i Norge?",
+      options: [
+        "Rike bønder fikk redskaper av bronse, og klimaet var mildere.",
+        "Menneskene brukte kun redskaper av stein.",
+        "Vikingene begynte sine reiser.",
+      ],
+      correctAnswer:
+        "Rike bønder fikk redskaper av bronse, og klimaet var mildere.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question: "Hvem var høvdingene i jernalderen?",
+      options: [
+        "Religiøse ledere som styrte templene.",
+        "De rikeste og mektigste bøndene som hadde soldater.",
+        "Kjøpmenn som handlet med utlandet.",
+      ],
+      correctAnswer: "De rikeste og mektigste bøndene som hadde soldater.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question:
+        "Hvilken religion hadde vikingene før kristendommen ble innført?",
+      options: ["Islam.", "Norrøn gudetro.", "Buddhisme."],
+      correctAnswer: "Norrøn gudetro.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question: "Hva skjedde i slaget på Stiklestad i 1030?",
+      options: [
+        "Harald Hårfagre ble konge over hele Norge.",
+        "Den kristne Olav Haraldsson ble drept, men kristendommen fikk likevel fotfeste.",
+        "Norge ble erobret av Danmark.",
+      ],
+      correctAnswer:
+        "Den kristne Olav Haraldsson ble drept, men kristendommen fikk likevel fotfeste.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question: "Hva var svartedauden?",
+      options: [
+        "En krig mellom Norge og Sverige.",
+        "En pandemi på midten av 1300-tallet som drepte en stor del av befolkningen.",
+        "En periode med hungersnød på grunn av dårlig vær.",
+      ],
+      correctAnswer:
+        "En pandemi på midten av 1300-tallet som drepte en stor del av befolkningen.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question: "Hvor lenge varte unionen mellom Danmark og Norge?",
+      options: [
+        "Fra 1066 til 1397.",
+        "Fra 1397 til 1814.",
+        "Fra 1814 til 1905.",
+      ],
+      correctAnswer: "Fra 1397 til 1814.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question: "Hva skjedde 17. mai 1814?",
+      options: [
+        "Norge ble helt selvstendig fra Sverige.",
+        "Norge fikk sin egen grunnlov.",
+        "Kong Haakon 7. ble konge.",
+      ],
+      correctAnswer: "Norge fikk sin egen grunnlov.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question:
+        "Hva kjennetegnet nasjonalromantikken i Norge på 1800-tallet?",
+      options: [
+        "Fokus på industriell utvikling og byliv.",
+        'Fremheving av vakker natur og bondesamfunnet som det "typisk norske".',
+        "Ønske om å bli en del av Danmark igjen.",
+      ],
+      correctAnswer:
+        'Fremheving av vakker natur og bondesamfunnet som det "typisk norske".',
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question: "Hvem lagde skriftspråket nynorsk?",
+      options: ["Henrik Ibsen.", "Ivar Aasen.", "Bjørnstjerne Bjørnson."],
+      correctAnswer: "Ivar Aasen.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question:
+        "Hvorfor utvandret mange nordmenn til Amerika mellom 1850 og 1920?",
+      options: [
+        "På grunn av religionsforfølgelse.",
+        "Det var ikke nok jord og arbeid til alle i Norge.",
+        "De ble tvunget av den svenske kongen.",
+      ],
+      correctAnswer: "Det var ikke nok jord og arbeid til alle i Norge.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question: "Når ble unionen mellom Sverige og Norge oppløst?",
+      options: ["1814.", "1905.", "1945."],
+      correctAnswer: "1905.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question:
+        "Hva var en viktig lov Stortinget vedtok tidlig på 1900-tallet for arbeidere?",
+      options: [
+        "Rett til gratis bil.",
+        "Begrenset arbeidsdag (først ti, så åtte timer) og rett til syketrygd.",
+        "Plikt til å jobbe 12 timer hver dag.",
+      ],
+      correctAnswer:
+        "Begrenset arbeidsdag (først ti, så åtte timer) og rett til syketrygd.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question:
+        "Hvordan var Norges rolle i den første verdenskrigen (1914-1918)?",
+      options: [
+        "Norge var aktivt med på Tysklands side.",
+        "Norge var aktivt med på Englands side.",
+        "Norge var ikke aktivt med, men opplevde økonomiske konsekvenser.",
+      ],
+      correctAnswer:
+        "Norge var ikke aktivt med, men opplevde økonomiske konsekvenser.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question:
+        "Når ble Norge okkupert av tyske tropper under den andre verdenskrigen?",
+      options: ["1. september 1939.", "9. april 1940.", "8. mai 1945."],
+      correctAnswer: "9. april 1940.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question:
+        "Hva var en viktig konsekvens av oljefunnet i Nordsjøen på slutten av 1960-årene for Norge?",
+      options: [
+        "Det førte til økonomisk nedgang.",
+        "Det fikk stor betydning for norsk økonomi og utviklet Norge til en oljenasjon.",
+        "Det førte til at Norge meldte seg inn i EU.",
+      ],
+      correctAnswer:
+        "Det fikk stor betydning for norsk økonomi og utviklet Norge til en oljenasjon.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question:
+        "Hvilken bevegelse kjempet for kvinners rettigheter og like muligheter for menn og kvinner i Norge?",
+      options: [
+        "Arbeiderbevegelsen.",
+        "Kvinnebevegelsen.",
+        "Avholdsbevegelsen.",
+      ],
+      correctAnswer: "Kvinnebevegelsen.",
+    },
+    {
+      topic:
+        "Norge før og nå - Historie fra steinalder til moderne tid, olje",
+      question: "Når fikk kvinner i Norge stemmerett?",
+      options: ["1814.", "1905.", "1913."],
+      correctAnswer: "1913.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question: 'Hva betyr det at menneskerettighetene er "universelle"?',
+      options: [
+        "De gjelder kun for mennesker i FN-bygningen.",
+        "De gjelder for alle mennesker, uansett hvor de bor eller hvem de er.",
+        "De gjelder kun for statsborgere i demokratiske land.",
+      ],
+      correctAnswer:
+        "De gjelder for alle mennesker, uansett hvor de bor eller hvem de er.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question:
+        "Når ble FNs verdenserklæring om menneskerettigheter vedtatt?",
+      options: ["1918.", "1948.", "1989."],
+      correctAnswer: "1948.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question: "Hva innebærer ytringsfrihet i et demokrati?",
+      options: [
+        "At man kan si hva som helst uten noen form for begrensninger.",
+        "At man fritt kan si sin mening, diskutere og skrive om den, innenfor lovens rammer.",
+        "At kun politikere har rett til å uttale seg offentlig.",
+      ],
+      correctAnswer:
+        "At man fritt kan si sin mening, diskutere og skrive om den, innenfor lovens rammer.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question: "Hva er stemmerettsalderen i Norge i dag?",
+      options: ["16 år.", "18 år.", "20 år."],
+      correctAnswer: "18 år.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question: "Hva innebærer rettssikkerhet?",
+      options: [
+        "At politiet kan dømme folk uten rettssak.",
+        "At ingen kan dømmes uten rettssak, og at man har rett til et forsvar.",
+        "At man alltid blir funnet uskyldig hvis man har en god advokat.",
+      ],
+      correctAnswer:
+        "At ingen kan dømmes uten rettssak, og at man har rett til et forsvar.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question: "Hva betyr religions- og trosfrihet?",
+      options: [
+        "At alle må tilhøre Den norske kirke.",
+        "At man er fri til å velge religion/livssyn eller ikke tilhøre noen, og praktisere dette fritt.",
+        "At staten velger religion for innbyggerne.",
+      ],
+      correctAnswer:
+        "At man er fri til å velge religion/livssyn eller ikke tilhøre noen, og praktisere dette fritt.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question:
+        "Hva er et eksempel på en plikt som følger med rettighetene i et demokrati?",
+      options: [
+        "Plikten til å stemme på et bestemt parti.",
+        "Plikten til å følge lovene og reglene som flertallet har bestemt.",
+        "Plikten til å være enig med regjeringen.",
+      ],
+      correctAnswer:
+        "Plikten til å følge lovene og reglene som flertallet har bestemt.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question:
+        "Hvilket styringsnivå har ansvar for videregående opplæring i Norge?",
+      options: ["Staten.", "Fylkeskommunen.", "Kommunen."],
+      correctAnswer: "Fylkeskommunen.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question:
+        "Hvilket styringsnivå har ansvar for grunnskoler og barnehager?",
+      options: ["Staten.", "Fylkeskommunen.", "Kommunen."],
+      correctAnswer: "Kommunen.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question: "Hva heter Norges nasjonalforsamling?",
+      options: ["Regjeringen.", "Stortinget.", "Høyesterett."],
+      correctAnswer: "Stortinget.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question: "Hva er en av Stortingets viktigste oppgaver?",
+      options: [
+        "Å ansette lærere i skolen.",
+        "Å vedta nye lover og statsbudsjettet.",
+        "Å styre utenrikspolitikken direkte.",
+      ],
+      correctAnswer: "Å vedta nye lover og statsbudsjettet.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question: "Hvem danner vanligvis regjering etter et stortingsvalg?",
+      options: [
+        "Kongen velger fritt hvem som skal sitte i regjering.",
+        "Ett eller flere partier som har flertall eller grunnlag for å styre.",
+        "Representanter fra alle partier på Stortinget.",
+      ],
+      correctAnswer:
+        "Ett eller flere partier som har flertall eller grunnlag for å styre.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question: "Hva innebærer maktfordelingsprinsippet?",
+      options: [
+        "At all makt samles hos statsministeren.",
+        "At makten deles mellom en lovgivende, en utøvende og en dømmende myndighet.",
+        "At fylkeskommunene har mer makt enn staten.",
+      ],
+      correctAnswer:
+        "At makten deles mellom en lovgivende, en utøvende og en dømmende myndighet.",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question: "Hvor ofte er det politiske valg i Norge?",
+      options: [
+        "Hvert år.",
+        "Annethvert år (vekselvis stortingsvalg og lokalvalg).",
+        "Hvert femte år.",
+      ],
+      correctAnswer:
+        "Annethvert år (vekselvis stortingsvalg og lokalvalg).",
+    },
+    {
+      topic:
+        "Demokrati og medborgerskap - Menneskerettigheter, Demokratiske rettigheter/plikter, Styringsnivåer, Stortinget, Regjering, Valg",
+      question: "Hva må du være for å stemme ved stortingsvalg i Norge?",
+      options: [
+        "Ha bodd i Norge i minst fem år.",
+        "Være norsk statsborger.",
+        "Være medlem av et politisk parti.",
+      ],
+      correctAnswer: "Være norsk statsborger.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question:
+        "Hvilke naturressurser nevnes som grunnlaget for Norges rikdom?",
+      options: [
+        "Gull og diamanter.",
+        "Fisk, skog, olje og vannkraft.",
+        "Sand og stein.",
+      ],
+      correctAnswer: "Fisk, skog, olje og vannkraft.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question:
+        "Når ble det første oljefunnet gjort i Norge (i Nordsjøen)?",
+      options: [
+        "På begynnelsen av 1800-tallet.",
+        "I slutten av 1960-årene.",
+        "Etter år 2000.",
+      ],
+      correctAnswer: "I slutten av 1960-årene.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question: 'Hva er "allemannsretten"?',
+      options: [
+        "Retten til å bygge hus hvor man vil i naturen.",
+        "Retten til å ferdes fritt til fots og på ski i utmark, og overnatte under visse betingelser.",
+        "Retten til å jakte og fiske overalt uten tillatelse.",
+      ],
+      correctAnswer:
+        "Retten til å ferdes fritt til fots og på ski i utmark, og overnatte under visse betingelser.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question: "Hva er en plikt når man bruker allemannsretten?",
+      options: [
+        "Å legge igjen søppel for å vise at man har vært der.",
+        "Å ikke skade dyr eller naturen, og rydde opp etter seg.",
+        "Å betale en avgift til grunneieren.",
+      ],
+      correctAnswer:
+        "Å ikke skade dyr eller naturen, og rydde opp etter seg.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question: "Hva er FNs bærekraftsmål en plan for?",
+      options: [
+        "Kun å stoppe klimaendringene.",
+        "Bærekraftig utvikling, inkludert å utrydde fattigdom og bekjempe ulikheter.",
+        "Å øke oljeproduksjonen globalt.",
+      ],
+      correctAnswer:
+        "Bærekraftig utvikling, inkludert å utrydde fattigdom og bekjempe ulikheter.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question:
+        "Hva mener de fleste klimaforskere er årsaken til dagens raske klimaendringer?",
+      options: [
+        "Naturlige variasjoner i solens aktivitet.",
+        "Menneskenes utslipp av karbongasser.",
+        "Vulkanutbrudd.",
+      ],
+      correctAnswer: "Menneskenes utslipp av karbongasser.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question: "Hva er et eksempel på en fornybar ressurs?",
+      options: ["Olje.", "Kull.", "Solstråler."],
+      correctAnswer: "Solstråler.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question: 'Hva er "kortreist mat"?',
+      options: [
+        "Mat som er importert fra fjerne land.",
+        "Mat som er produsert i nærheten av forbrukeren.",
+        "Mat som kun kan spises på korte turer.",
+      ],
+      correctAnswer: "Mat som er produsert i nærheten av forbrukeren.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question: 'Hva betyr "gjenbruk"?',
+      options: [
+        "At ting smeltes om til nye produkter.",
+        "At ting som ikke lenger trengs, kan brukes på nytt av andre.",
+        "At man kaster ting etter én gangs bruk.",
+      ],
+      correctAnswer:
+        "At ting som ikke lenger trengs, kan brukes på nytt av andre.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question: 'Hva er "kildesortering"?',
+      options: [
+        "At kommunen sorterer all søppel sentralt.",
+        "At innbyggerne sorterer sin egen søppel i forskjellige kategorier.",
+        "Å kun kaste matavfall.",
+      ],
+      correctAnswer:
+        "At innbyggerne sorterer sin egen søppel i forskjellige kategorier.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question: 'Hva er "matsvinn"?',
+      options: [
+        "Når man spiser for mye mat.",
+        "Når spiselig mat kastes eller brukes til noe annet enn menneskemat.",
+        "Mat som har gått ut på dato, men som fortsatt er spiselig.",
+      ],
+      correctAnswer:
+        "Når spiselig mat kastes eller brukes til noe annet enn menneskemat.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question:
+        "Hvor stor andel av klimagassutslippene i Norge står transport for?",
+      options: [
+        "Omtrent ti prosent.",
+        "Omtrent tretti prosent.",
+        "Omtrent femti prosent.",
+      ],
+      correctAnswer: "Omtrent tretti prosent.",
+    },
+    {
+      topic:
+        "Natur, miljø og teknologi - Naturressurser, Allemannsretten, Bærekraft, Klimaendringer, Miljøvern, Gjenbruk, Matsvinn, Transport",
+      question: "Hva er et mål i Norge for salg av nye biler fra 2025?",
+      options: [
+        "At alle nye biler skal være dieselbiler.",
+        "At nesten alle nye biler som selges skal være nullutslippsbiler.",
+        "At det skal selges færre biler totalt.",
+      ],
+      correctAnswer:
+        "At nesten alle nye biler som selges skal være nullutslippsbiler.",
+    },
+  ]; // Paste the full JSON array here
+
+  export default quizData;
