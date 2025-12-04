@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samfunnskunnskap - Norwegian Citizenship Test App</title>
+    <meta name="description" content="Master the Norwegian Social Studies exam. The beautiful, comprehensive study companion.">
+    
+    <style>
+        /* --- RESET & BASICS --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        :root {
+            /* Nordic Palette */
+            --midnight: #0f172a;
+            --fjord: #1e293b;
+            --aurora-blue: #2563eb;
+            --aurora-teal: #2dd4bf;
+            --snow: #f8fafc;
+            --paper: #f1f5f9;
+            --text-main: #334155;
+            --text-light: #94a3b8;
+            --accent-red: #ef4444; /* Norwegian flag red */
+            
+            --font-serif: Georgia, 'Times New Roman', Times, serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            
+            --shadow-soft: 0 20px 40px -10px rgba(0,0,0,0.1);
+            --shadow-glow: 0 0 40px rgba(45, 212, 191, 0.2);
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--snow);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        button { border: none; background: none; cursor: pointer; font-family: inherit; }
+
+        /* --- ANIMATIONS --- */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- LAYOUT UTILS --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+        
+        /* --- NAVIGATION --- */
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding-top: 2rem;
+        }
+        
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo span {
+            padding: 4px 10px;
+            font-family: var(--font-sans);
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-link { color: rgba(255,255,255,0.7); font-weight: 500; font-size: 0.95rem; }
+        .nav-link:hover { color: white; }
+        
+        .btn-glass {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .btn-glass:hover { background: white; color: var(--midnight); transform: scale(1.05); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: #4DADB2;
+            color: white;
+            position: relative;
+            padding-top: 180px;
+            padding-bottom: 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Aurora Effect */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.15), transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(45, 212, 191, 0.1), transparent 40%);
+            animation: gradientFlow 15s ease infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            max-width: 450px;
+            font-weight: 300;
+        }
+
+        .app-badges {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--midnight);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+
+        /* --- PHONE MOCKUP --- */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            perspective: 1000px;
+        }
+
+        .phone-container {
+            width: 300px;
+            height: 600px;
+            background: transparent;
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: var(--snow);
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Re-implementing the app UI inside the phone with cleaner CSS */
+        .app-status { height: 44px; display: flex; justify-content: space-between; padding: 0 20px; align-items: center; font-size: 10px; font-weight: 600; }
+        .app-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+
+        .app-h1 { font-family: var(--font-serif); font-size: 1.5rem; color: var(--midnight); margin-bottom: 5px; }
+        .app-p { font-size: 0.8rem; color: var(--text-light); margin-bottom: 20px; line-height: 1.4; }
+
+        .app-hero-img {
+            height: 160px;
+            border-radius: 20px;
+            background: linear-gradient(180deg, #dbeafe 0%, #eff6ff 100%);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+        }
+        /* CSS House Landscape */
+        .css-water { position: absolute; bottom: 0; width: 100%; height: 40px; background: #115e59; }
+        .css-mtn { position: absolute; bottom: 40px; width: 100%; height: 80px; background: #94a3b8; clip-path: polygon(0 100%, 30% 20%, 60% 100%, 70% 60%, 100% 100%); opacity: 0.5; }
+        .css-house {
+            position: absolute; bottom: 20px; right: 30px;
+            width: 60px; height: 50px; background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .css-house:before {
+            content:''; position: absolute; top:-25px; left:0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 25px solid #ef4444;
+        }
+
+        .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .app-card {
+            background: white; border-radius: 20px;
+            padding: 20px; aspect-ratio: 1;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border: 1px solid #f1f5f9;
+        }
+        .icon-box { width: 40px; height: 40px; background: #f1f5f9; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; color: #64748b; }
+
+        .app-tip {
+            background: #f0f9ff; border: 1px solid #bae6fd;
+            border-radius: 16px; padding: 16px;
+        }
+
+        .app-nav {
+            background: white; margin: 0 20px 20px;
+            padding: 15px; border-radius: 20px;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            display: flex; justify-content: space-around;
+        }
+        .nav-dot { width: 4px; height: 4px; background: var(--text-light); border-radius: 50%; }
+        .nav-dot.active { background: var(--aurora-teal); transform: scale(1.5); }
+
+        /* --- WAVE DIVIDER --- */
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(130% + 1.3px);
+            height: 100px;
+            transform: rotateY(180deg);
+        }
+        .wave-divider .shape-fill {
+            fill: var(--snow);
+        }
+
+        /* --- FEATURES --- */
+        .features { padding: 100px 0; position: relative; }
+
+        .section-head { text-align: center; margin-bottom: 80px; }
+        .section-head h2 { font-family: var(--font-serif); font-size: 2.5rem; color: var(--midnight); margin-bottom: 1rem; }
+        .tag { background: #e0f2fe; color: #0284c7; padding: 6px 16px; border-radius: 20px; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; font-weight: 700; display: inline-block; margin-bottom: 1rem; }
+
+        .feature-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        .feature-box:hover { transform: translateY(-10px); }
+
+        .f-icon {
+            width: 60px; height: 60px;
+            background: var(--midnight);
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+        .f-icon.teal { background: var(--aurora-teal); }
+        .f-icon.blue { background: var(--aurora-blue); }
+
+        .feature-box h3 { font-size: 1.25rem; margin-bottom: 1rem; color: var(--midnight); }
+        .feature-box p { color: var(--text-light); font-size: 0.95rem; }
+
+        /* --- SUPPORT / FOOTER --- */
+        .footer-cta {
+            background: var(--midnight);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .footer-cta h2 { font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 2rem; }
+
+        .support-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .s-link {
+            display: flex; align-items: center; gap: 10px;
+            background: rgba(255,255,255,0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .s-link:hover { background: rgba(255,255,255,0.1); }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+            .hero-text h1 { font-size: 3rem; }
+            .hero-text p { margin: 0 auto 2.5rem; }
+            .hero-visual { margin-top: 2rem; }
+            .feature-row { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-inner">
+            <div class="logo">
+                <span>Samfunn | Statsborgerprøve</span>
+            </div>
+            <div class="nav-links">
+                <a href="#support" class="nav-link">Support</a>
+                <button class="btn-glass">Download App</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <div class="hero-text reveal active">
+                <h1>The easy way to prepare for the exam.</h1>
+                <p>Prepare for Samfunnskunnskapsprøve and Statsborgerprøve in the most intuitive way. Study smart, track your progress, and feel confident on exam day — all without an account, login, or unnecessary steps.</p>
+                <a href="#" class="btn-primary">
+                    <svg width="20" height="24" viewBox="0 0 384 512" fill="currentColor"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z"/></svg>
+                    Download on App Store
+                </a>
+            </div>
+
+            <div class="hero-visual reveal">
+                <div class="phone-container">
+
+                    <div class="app-body">
+                        <img width="100%" height="100%" src="phone.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <footer id="support" class="footer-cta">
+        <div class="container">
+            <h2>We are here to help.</h2>
+            <p style="color: rgba(255,255,255,0.7); max-width: 500px; margin: 0 auto;">Questions about the app? Found a bug? Or just want to say hei?</p>
+
+            <div class="support-links">
+                <a href="mailto:samfunnappcontact@gmail.com" class="s-link">
+                    <span>✉️</span> Contact Support
+                </a>
+                <a href="https://nashby.github.io/public/samfunn-app/privacy_policy.html" class="s-link">
+                    <span>🛡️</span> Privacy Policy
+                </a>
+            </div>
+
+            <div style="margin-top: 80px; font-size: 0.8rem; color: rgba(255,255,255,0.3);">
+                &copy; 2025 Samfunnskunnskap App. All rights reserved. <br>
+                Made with ❤️ in Oslo.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
