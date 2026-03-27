@@ -450,12 +450,58 @@ uploadScreen.addEventListener("drop", (e) => {
   handleFile(e.dataTransfer.files[0]);
 });
 
+// Back button on file list
+document.getElementById("back-btn").addEventListener("click", () => {
+  hideAll();
+  uploadScreen.classList.remove("hidden");
+  state = "upload";
+  pushHistory({ screen: "upload" });
+});
+
 // Game files button
 re1FilesLink.addEventListener("click", () => {
   const gameSelect = document.getElementById("game-select");
   selectedGame = gameSelect.value;
   if (selectedGame && GAME_FILES[selectedGame]) {
     showFileList();
+  }
+});
+
+// Swipe navigation
+let touchStartX = null;
+let touchStartY = null;
+const SWIPE_THRESHOLD = 50;
+
+document.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+});
+
+document.addEventListener("touchend", (e) => {
+  if (touchStartX === null) return;
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  touchStartX = null;
+  touchStartY = null;
+
+  if (Math.abs(dx) < SWIPE_THRESHOLD || Math.abs(dy) > Math.abs(dx)) return;
+
+  if (dx < 0) {
+    // Swipe left → next
+    if (state === "title") {
+      openFile();
+    } else if (state === "reading") {
+      if (currentPage < currentFile.pages.length - 1) {
+        nextPage();
+      } else {
+        exitFile();
+      }
+    } else if (state === "filed") {
+      dismissFiled();
+    }
+  } else {
+    // Swipe right → prev
+    if (state === "reading") prevPage();
   }
 });
 
