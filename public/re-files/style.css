@@ -1,0 +1,555 @@
+@font-face {
+    font-family: "RE1Font";
+    src: url("fonts/BiohazardFE.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "CompactaBold";
+    src: url("fonts/CompactaBold.otf") format("opentype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+}
+
+.re1-screen {
+    background: var(--bg-color);
+    width: 800px;
+    height: 100vh;
+    height: 100dvh;
+    position: relative;
+}
+
+@media (max-width: 800px) {
+    .re1-screen {
+        width: 100vw;
+    }
+}
+
+/* RE1 theme */
+.re1 {
+    --text-color: #d8d4cc;
+    --bg-color: #000000;
+    --arrow-color: #2a8c2a;
+    --exit-color: #7a7a7a;
+    --font-size: clamp(18px, 3.5vw, 38px);
+    --line-height: 1;
+}
+
+#file-viewer {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    padding: clamp(16px, 4vh, 40px) 0;
+    image-rendering: pixelated;
+}
+
+.file-content {
+    flex: 1;
+    overflow: visible;
+    padding: 0 clamp(6px, 1.5vw, 10px);
+    display: flex;
+    align-items: center;
+}
+
+.file-content.slide-out-left,
+.file-content.slide-out-right,
+.file-content.slide-in-left,
+.file-content.slide-in-right {
+    overflow: hidden;
+}
+
+.file-content.image-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    filter: brightness(0.75) contrast(1.2) saturate(0.5) sepia(0.3);
+}
+
+#page-text {
+    font-family: "RE1Font", "Courier New", monospace;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    color: var(--text-color);
+    letter-spacing: 2px;
+    white-space: pre-wrap;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    text-shadow:
+        0 0 2px rgba(216, 212, 204, 0.3),
+        1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 clamp(10px, 2vw, 20px);
+    opacity: 1;
+    transition: opacity 0.15s;
+}
+
+.nav-btn:hover {
+    opacity: 0.8;
+}
+
+.nav-btn.hidden {
+    visibility: hidden;
+}
+
+/* Green triangle arrows */
+.arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+}
+
+.arrow.left,
+.arrow.right {
+    border-top: clamp(6px, 1.2vw, 10px) solid transparent;
+    border-bottom: clamp(6px, 1.2vw, 10px) solid transparent;
+}
+
+.arrow.left {
+    border-right: clamp(8px, 1.6vw, 14px) solid var(--arrow-color);
+}
+
+.arrow.right {
+    border-left: clamp(8px, 1.6vw, 14px) solid var(--arrow-color);
+}
+
+.arrow.down {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid var(--exit-color);
+}
+
+.exit-label {
+    display: none;
+    font-family: "RE1Font", "Courier New", monospace;
+    font-size: clamp(24px, 4vw, 47px);
+    color: var(--exit-color);
+    letter-spacing: 0px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+.exit-label.visible {
+    display: block;
+}
+
+/* Page slide transitions */
+.file-content {
+    position: relative;
+}
+
+.file-content.slide-out-left {
+    animation: slideOutLeft 0.2s ease-in forwards;
+}
+
+.file-content.slide-out-right {
+    animation: slideOutRight 0.2s ease-in forwards;
+}
+
+.file-content.slide-in-left {
+    animation: slideInLeft 0.2s ease-out forwards;
+}
+
+.file-content.slide-in-right {
+    animation: slideInRight 0.2s ease-out forwards;
+}
+
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Upload screen */
+#upload-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 4vh, 30px);
+    padding: 20px;
+}
+
+.logo-group {
+    text-align: center;
+}
+
+.re-logo {
+    font-family: "CompactaBold", sans-serif;
+    font-size: clamp(28px, 7vw, 64px);
+    color: #8b0000;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: clamp(2px, 0.8vw, 6px);
+    text-transform: uppercase;
+    text-shadow:
+        0 0 20px rgba(139, 0, 0, 0.6),
+        0 0 40px rgba(139, 0, 0, 0.3),
+        2px 2px 0 rgba(0, 0, 0, 0.8);
+}
+
+.re-logo-sub {
+    font-family: "CompactaBold", sans-serif;
+    font-size: clamp(10px, 2vw, 18px);
+    color: var(--text-color);
+    letter-spacing: clamp(4px, 1.5vw, 12px);
+    margin-top: 4px;
+    text-shadow: 0 0 10px rgba(216, 212, 204, 0.2);
+}
+
+.re-logo-accent {
+    color: #8b0000;
+    text-shadow:
+        0 0 20px rgba(139, 0, 0, 0.6),
+        0 0 40px rgba(139, 0, 0, 0.3),
+        2px 2px 0 rgba(0, 0, 0, 0.8);
+}
+
+#upload-screen.dragover {
+    outline: 2px dashed var(--arrow-color);
+    outline-offset: -10px;
+}
+
+/* Main action - game select */
+.main-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(10px, 2vh, 16px);
+    width: 100%;
+    max-width: 420px;
+}
+
+.game-select {
+    font-family: "RE1Font", "Courier New", monospace;
+    font-size: clamp(12px, 2vw, 18px);
+    color: var(--text-color);
+    background: transparent;
+    border: 1px solid var(--exit-color);
+    padding: 10px 36px 10px 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    text-align: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0 L6 8 L12 0' fill='%237a7a7a'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.game-select:focus {
+    outline: 1px solid var(--arrow-color);
+    border-color: var(--arrow-color);
+}
+
+.game-select option {
+    background: #111;
+    color: var(--text-color);
+    font-family: "RE1Font", "Courier New", monospace;
+    text-align: left;
+}
+
+.game-select option:disabled {
+    color: var(--exit-color);
+}
+
+.re1-action-btn {
+    font-family: "RE1Font", "Courier New", monospace;
+    font-size: clamp(14px, 2.5vw, 24px);
+    color: var(--arrow-color);
+    background: none;
+    border: none;
+    padding: 6px 0;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    text-shadow: 0 0 4px rgba(42, 140, 42, 0.3);
+}
+
+.re1-action-btn:hover {
+    opacity: 0.7;
+}
+
+/* Divider */
+.upload-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--exit-color);
+    opacity: 0.3;
+}
+
+.divider-text {
+    font-family: "RE1Font", "Courier New", monospace;
+    font-size: clamp(10px, 1.5vw, 14px);
+    color: var(--exit-color);
+    letter-spacing: 4px;
+}
+
+/* Upload */
+.upload-btn {
+    font-family: "RE1Font", "Courier New", monospace;
+    font-size: clamp(12px, 2vw, 18px);
+    color: var(--exit-color);
+    letter-spacing: 2px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.15s;
+}
+
+.upload-btn:hover {
+    color: var(--text-color);
+}
+
+.credits {
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #555;
+    position: absolute;
+    bottom: 16px;
+}
+
+.credits a {
+    color: #777;
+    text-decoration: underline;
+}
+
+.credits a:hover {
+    color: #999;
+}
+
+/* File list screen */
+#file-list-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(16px, 3vh, 30px) clamp(16px, 4vw, 40px);
+}
+
+.file-list-header {
+    flex-shrink: 0;
+    margin-bottom: clamp(10px, 2vh, 20px);
+}
+
+.file-list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2px, 0.5vh, 6px);
+    width: 100%;
+    overflow-y: auto;
+    flex: 1;
+    scrollbar-width: thin;
+    scrollbar-color: var(--arrow-color) rgba(255, 255, 255, 0.05);
+}
+
+.file-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.file-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.file-list::-webkit-scrollbar-thumb {
+    background: var(--arrow-color);
+    border-radius: 0;
+}
+
+.file-list::-webkit-scrollbar-thumb:hover {
+    background: #3dcc3d;
+}
+
+.file-list-item {
+    font-family: "RE1Font", "Courier New", monospace;
+    font-size: clamp(12px, 2vw, 20px);
+    color: var(--text-color);
+    letter-spacing: 2px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    padding: clamp(4px, 0.8vh, 6px) 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.15s;
+    flex-shrink: 0;
+}
+
+.file-list-item:hover {
+    color: var(--arrow-color);
+}
+
+.file-list-item .arrow {
+    flex-shrink: 0;
+}
+
+/* Title screen */
+#title-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.title-row {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2vw, 20px);
+}
+
+.title-text {
+    font-family: "RE1Font", "Courier New", monospace;
+    font-size: var(--font-size);
+    color: var(--text-color);
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Filed screen */
+.hidden {
+    display: none !important;
+}
+
+#filed-screen {
+    display: flex;
+    align-items: flex-end;
+    padding: 0 clamp(12px, 3vw, 24px) clamp(24px, 6vh, 50px);
+}
+
+.filed-title {
+    font-family: "RE1Font", "Courier New", monospace;
+    font-size: var(--font-size);
+    color: #3dcc3d;
+    letter-spacing: 4px;
+    margin-bottom: 4px;
+    text-shadow: 0 0 4px rgba(61, 204, 61, 0.3);
+}
+
+.filed-subtitle {
+    font-family: "RE1Font", "Courier New", monospace;
+    font-size: var(--font-size);
+    color: #8a9a8a;
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+    text-shadow: 0 0 2px rgba(138, 154, 138, 0.2);
+    min-height: 1em;
+}
+
+.filed-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.filed-arrow .arrow {
+    animation: arrowBlink 1s infinite;
+}
+
+.nav-btn .arrow {
+    animation: arrowBlink 1s infinite;
+}
+
+@keyframes arrowBlink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Scanline overlay for retro feel */
+.re1-screen::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 0, 0, 0.08) 2px,
+        rgba(0, 0, 0, 0.08) 4px
+    );
+    pointer-events: none;
+}

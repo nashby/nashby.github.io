@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RE Files</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="upload-screen" class="re1 re1-screen">
+            <div class="logo-group">
+                <h1 class="re-logo">RESIDENT EVIL</h1>
+                <p class="re-logo-sub">
+                    <span class="re-logo-accent">RE</span>ADER
+                </p>
+            </div>
+            <div class="main-action">
+                <select id="game-select" class="game-select">
+                    <option value="re1">Resident Evil (1996)</option>
+                    <option value="re2">Resident Evil 2 (1998)</option>
+                    <option value="re3">Resident Evil 3: Nemesis (1999)</option>
+                </select>
+                <button id="re1-files-link" class="re1-action-btn">
+                    READ IN-GAME FILES
+                </button>
+            </div>
+            <div class="upload-divider">
+                <span class="divider-line"></span>
+                <span class="divider-text">OR</span>
+                <span class="divider-line"></span>
+            </div>
+            <label class="upload-btn">
+                Open any text file
+                <input
+                    type="file"
+                    id="file-input"
+                    accept=".txt,.md"
+                    hidden
+                />
+            </label>
+            <p class="credits">
+                In-game files sourced from
+                <a href="https://www.evilresource.com" target="_blank" rel="noopener">evilresource.com</a>
+            </p>
+        </div>
+        <div id="file-list-screen" class="re1 re1-screen hidden">
+            <div class="logo-group file-list-header">
+                <h1 class="re-logo" id="file-list-logo">RESIDENT EVIL</h1>
+                <p class="re-logo-sub"><span class="re-logo-accent">RE</span>ADER</p>
+            </div>
+            <div class="file-list" id="file-list"></div>
+        </div>
+        <div id="title-screen" class="re1 re1-screen hidden">
+            <div class="title-row">
+                <span class="title-text" id="title-text"></span>
+                <button
+                    id="title-next-btn"
+                    class="nav-btn"
+                    aria-label="Open file"
+                >
+                    <span class="arrow right"></span>
+                </button>
+            </div>
+        </div>
+        <div id="file-viewer" class="re1 re1-screen hidden">
+            <button
+                id="prev-btn"
+                class="nav-btn nav-prev"
+                aria-label="Previous page"
+            >
+                <span class="arrow left"></span>
+            </button>
+            <div class="file-content">
+                <p id="page-text"></p>
+            </div>
+            <button
+                id="next-btn"
+                class="nav-btn nav-next"
+                aria-label="Next page"
+            >
+                <span class="arrow right"></span
+                ><span class="exit-label" id="exit-label">EXIT</span>
+            </button>
+        </div>
+        <div id="filed-screen" class="re1 re1-screen hidden">
+            <div class="filed-message">
+                <p class="filed-title" id="filed-title"></p>
+                <p class="filed-subtitle" id="filed-subtitle">
+                    <span class="filed-arrow" id="filed-arrow"
+                        ><span class="arrow down"></span
+                    ></span>
+                </p>
+            </div>
+        </div>
+        <script src="re1-files.js"></script>
+        <script src="re2-files.js"></script>
+        <script src="re3-files.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
