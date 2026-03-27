@@ -132,8 +132,27 @@ const fileInput = document.getElementById("file-input");
 const fileListScreen = document.getElementById("file-list-screen");
 const fileList = document.getElementById("file-list");
 const re1FilesLink = document.getElementById("re1-files-link");
-const pageTurnSound = new Audio("sounds/filefall.wav");
-const exitSound = new Audio("sounds/ending02.wav");
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+const soundBuffers = {};
+
+async function loadSound(name, src) {
+  const response = await fetch(src);
+  const arrayBuffer = await response.arrayBuffer();
+  soundBuffers[name] = await audioCtx.decodeAudioData(arrayBuffer);
+}
+
+function playSound(name) {
+  if (audioCtx.state === "suspended") audioCtx.resume();
+  const buffer = soundBuffers[name];
+  if (!buffer) return;
+  const source = audioCtx.createBufferSource();
+  source.buffer = buffer;
+  source.connect(audioCtx.destination);
+  source.start(0);
+}
+
+loadSound("pageTurn", "sounds/filefall.wav");
+loadSound("exit", "sounds/ending02.wav");
 
 let re1FileIndex = 0;
 let pushingHistory = true;
@@ -297,8 +316,7 @@ function renderPage(direction) {
 }
 
 function playPageSound() {
-  pageTurnSound.currentTime = 0;
-  pageTurnSound.play();
+  playSound("pageTurn");
 }
 
 function nextPage() {
@@ -338,8 +356,7 @@ function exitFile() {
   if (state !== "reading") return;
   state = "filed";
   pushHistory({ screen: "filed", browsingRE1 });
-  exitSound.currentTime = 0;
-  exitSound.play();
+  playSound("exit");
   viewer.classList.add("hidden");
   filedScreen.classList.remove("hidden");
 
